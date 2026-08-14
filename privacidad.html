@@ -1,121 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacidad — SmartFlow</title>
-  <meta name="description" content="Política de privacidad de SmartFlow.">
-  <meta name="robots" content="noindex">
-
-  <link rel="icon" type="image/png" href="assets/icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — SmartFlow</title>
+<style>
+  :root {
+    --ink: #0B1B14;
+    --muted: #5b6b63;
+    --primary: #10B981;
+    --bg: #F0FDF9;
+    --card: #ffffff;
+    --border: #DCEFE8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 6px;
+    letter-spacing: -0.5px;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    padding-top: 8px;
+  }
+  p, li {
+    font-size: 15px;
+    color: #223028;
+  }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .contact {
+    background: rgba(16, 185, 129, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  a { color: var(--primary); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <!-- ============================= HEADER ============================= -->
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="index.html" class="brand">
-        <img src="assets/icon.png" alt="" width="34" height="34">
-        SmartFlow
-      </a>
+  <span class="badge">SmartFlow</span>
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: agosto de 2026</p>
 
-      <div class="header-controls">
-        <nav class="lang-switch" aria-label="Seleccionar idioma">
-          <button type="button" data-lang="es" aria-pressed="true">ES</button>
-          <button type="button" data-lang="ca" aria-pressed="false">CA</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-        </nav>
+  <p>
+    Esta Política de Privacidad describe cómo <strong>SmartFlow</strong> ("la aplicación", "nosotros")
+    trata los datos cuando usas la aplicación. SmartFlow está desarrollada por un desarrollador
+    independiente (SmartBalance) y su principio de diseño es que <strong>tus datos financieros
+    permanezcan en tu dispositivo</strong> siempre que sea posible.
+  </p>
 
-        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" data-i18n-aria="theme.toggle" aria-label="Cambiar tema">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
+  <h2>1. Resumen — lo esencial</h2>
+  <div class="card">
+    <p style="margin:0;">
+      Tus movimientos, presupuesto, patrimonio, ahorro e inversiones se guardan
+      <strong>únicamente en tu teléfono</strong>, en una base de datos local. SmartFlow no se
+      conecta a tu banco y no tiene un servidor propio donde se almacenen tus finanzas.
+      Solo si activas funciones concretas de la <strong>suscripción Premium</strong> (el asistente
+      Flux) o consultas cotizaciones de mercado, algunos datos salen de tu dispositivo — se
+      detalla exactamente cuáles en las secciones siguientes.
+    </p>
+  </div>
 
-  <!-- ============================== LEGAL =============================== -->
-  <main class="container legal">
-    <a href="index.html" class="back-link" data-i18n="legal.back">← Volver a SmartFlow</a>
+  <h2>2. Datos que se quedan siempre en tu dispositivo</h2>
+  <p>La siguiente información se almacena de forma local, en una base de datos cifrada por
+  el propio sistema operativo de tu teléfono, y <strong>nunca se envía a ningún servidor</strong>
+  salvo que tú mismo elijas exportarla o compartirla:</p>
+  <ul>
+    <li>Movimientos (ingresos, gastos, ahorro), categorías y subcategorías</li>
+    <li>Presupuestos y objetivos de ahorro</li>
+    <li>Cuentas, activos y pasivos, y el cálculo de tu patrimonio neto</li>
+    <li>Inversiones: inmuebles, fondos/acciones, hipotecas y su amortización</li>
+    <li>Preferencias de la aplicación (idioma, moneda, paleta de colores, etc.)</li>
+  </ul>
+  <p>
+    Puedes exportar una copia de estos datos en formato JSON en cualquier momento desde
+    Ajustes, y decidir tú mismo dónde guardarla o con quién compartirla (por ejemplo, tu
+    propio Google Drive) — SmartFlow no sube esa copia a ningún sitio de forma automática.
+  </p>
 
-    <h1 data-i18n="legal.title">Política de privacidad</h1>
-    <p class="legal__updated" data-i18n="legal.updated">Última actualización: 29 de julio de 2026</p>
+  <h2>3. Entrada por voz</h2>
+  <p>
+    Si usas la función de registrar movimientos por voz, el audio se procesa mediante el
+    reconocimiento de voz del propio sistema operativo de tu teléfono (Android). SmartFlow no
+    graba ni almacena archivos de audio — solo recibe el texto ya transcrito por el sistema.
+  </p>
 
-    <section>
-      <h2 data-i18n="legal.intro.title">1. Resumen</h2>
-      <p data-i18n="legal.intro.body">SmartFlow es una app de finanzas personales <strong>local-first</strong>: tus movimientos, cuentas, inversiones y todo lo demás se guardan en el almacenamiento de tu propio dispositivo. No tenemos un servidor donde vivan tus datos financieros, no los vemos y no los vendemos.</p>
-    </section>
+  <h2>4. Suscripción Premium — el asistente Flux</h2>
+  <p>
+    Si activas la suscripción Premium, algunas funciones sí requieren enviar datos fuera de
+    tu dispositivo:
+  </p>
 
-    <section>
-      <h2 data-i18n="legal.responsible.title">2. Responsable</h2>
-      <p data-i18n="legal.responsible.body">SmartFlow es una app desarrollada de forma independiente por SmartBalance. Para cualquier consulta sobre privacidad puedes escribir a <a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a>.</p>
-    </section>
+  <div class="card">
+    <div class="card-title">Al hablar con Flux (el asistente financiero)</div>
+    <p style="margin:0;">
+      Cuando le haces una pregunta a Flux, se envían tus últimos mensajes de la conversación
+      junto con un resumen agregado de tus finanzas (por ejemplo, totales por categoría o
+      movimientos recientes relevantes a tu pregunta) a un servidor propio de SmartFlow
+      (alojado en Firebase, Google Cloud, región europea), que reenvía la consulta a la API
+      de Claude (Anthropic) para generar la respuesta. Estas consultas están limitadas a un
+      número máximo mensual según tu plan.
+    </p>
+  </div>
 
-    <section>
-      <h2 data-i18n="legal.data.title">3. Qué datos trata la app</h2>
-      <p data-i18n="legal.data.body">Toda la información financiera que introduces (movimientos, cuentas, inversiones, inmuebles, objetivos) se almacena únicamente en la base de datos local del dispositivo. No se envía automáticamente a ningún servidor. En concreto:</p>
-      <ul>
-        <li data-i18n="legal.data.li1">La copia de seguridad/restauración en JSON la generas y guardas tú, donde tú decidas (por ejemplo, tu propio Google Drive) — nosotros no tenemos acceso a ese fichero.</li>
-        <li data-i18n="legal.data.li2">El bloqueo por PIN o biometría usa los sistemas de seguridad del propio sistema operativo Android; SmartFlow no recibe ni almacena tu huella o tu cara, solo el resultado (autorizado o no).</li>
-        <li data-i18n="legal.data.li3">La entrada por voz se procesa en el propio dispositivo para convertir el habla en texto.</li>
-        <li data-i18n="legal.data.li4">Si desinstalas la app o borras sus datos, esa información desaparece — no queda copia en ningún otro sitio nuestro.</li>
-      </ul>
-    </section>
+  <div class="card">
+    <div class="card-title">Gestión de la suscripción</div>
+    <p style="margin:0;">
+      La compra y gestión de la suscripción Premium la procesa <strong>RevenueCat</strong> y
+      las tiendas de aplicaciones (Google Play / App Store), que reciben la información de
+      compra necesaria para validar tu suscripción. SmartFlow no almacena tus datos de pago
+      (tarjeta, etc.) en ningún momento — eso lo gestiona directamente la tienda de
+      aplicaciones.
+    </p>
+  </div>
 
-    <section>
-      <h2 data-i18n="legal.permissions.title">4. Permisos que solicita la app</h2>
-      <p data-i18n="legal.permissions.body">SmartFlow pide únicamente los permisos necesarios para las funciones que ofrece: micrófono (para la entrada por voz), almacenamiento (para importar/exportar Excel y hacer copias de seguridad) y notificaciones (para avisos de presupuesto y recordatorios). Ninguno de estos permisos se usa para rastrear tu actividad ni se comparte con terceros.</p>
-    </section>
+  <div class="card">
+    <div class="card-title">Identificación técnica del dispositivo</div>
+    <p style="margin:0;">
+      Para proteger el servicio frente a abusos, SmartFlow usa Firebase App Check (que
+      verifica que las peticiones vienen de la app real, no de un programa externo) y una
+      identificación anónima de Firebase Authentication — no se asocia a tu nombre, correo ni
+      ningún dato personal identificativo.
+    </p>
+  </div>
 
-    <section>
-      <h2 data-i18n="legal.thirdparty.title">5. Terceros, anuncios y analítica</h2>
-      <p data-i18n="legal.thirdparty.body">SmartFlow no incluye publicidad ni SDKs de terceros para analítica o seguimiento. No compartimos, vendemos ni cedemos tus datos financieros a nadie.</p>
-    </section>
+  <h2>5. Cotizaciones de mercado (Fondos, Acciones, Cripto)</h2>
+  <p>
+    Si consultas el precio de un fondo, acción o criptomoneda, SmartFlow contacta directamente
+    desde tu dispositivo con los servicios <strong>Alpha Vantage</strong> y
+    <strong>CoinGecko</strong> para obtener la cotización. Para Alpha Vantage necesitas
+    introducir tu propia clave de API (se guarda solo en tu dispositivo); estas consultas se
+    rigen también por las políticas de privacidad propias de Alpha Vantage y CoinGecko.
+  </p>
 
-    <section>
-      <h2 data-i18n="legal.premium.title">6. Futuras funciones con IA (Pack Premium)</h2>
-      <p data-i18n="legal.premium.body">Estamos preparando funciones opcionales de pago que usarán inteligencia artificial (por ejemplo, un asistente financiero). Cuando esas funciones estén disponibles, solo se activarán si tú lo decides expresamente, y actualizaremos esta política para explicar exactamente qué datos se procesan y cómo, antes de que puedas activarlas.</p>
-    </section>
+  <h2>6. Lo que SmartFlow no hace</h2>
+  <ul>
+    <li>No conecta con tu banco ni accede a tus cuentas bancarias reales</li>
+    <li>No vende tus datos a terceros ni los usa con fines publicitarios</li>
+    <li>No muestra anuncios de terceros</li>
+    <li>No comparte tus datos financieros con nadie salvo lo descrito en la sección 4, y
+    solo si usas activamente esa función</li>
+  </ul>
 
-    <section>
-      <h2 data-i18n="legal.rights.title">7. Tus derechos</h2>
-      <p data-i18n="legal.rights.body">Como tus datos financieros viven en tu propio dispositivo, tienes control directo sobre ellos en todo momento: puedes exportarlos, editarlos o borrarlos desde la propia app, sin necesidad de pedírnoslo. Si tienes cualquier otra duda sobre tus datos, puedes escribirnos a <a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a>.</p>
-    </section>
+  <h2>7. Tus derechos</h2>
+  <p>
+    Como la inmensa mayoría de tus datos nunca salen de tu propio dispositivo, tú tienes el
+    control directo sobre ellos: puedes editarlos, exportarlos o borrarlos por completo desde
+    dentro de la aplicación (Ajustes → Borrar todos los datos), en cualquier momento, sin
+    tener que pedírnoslo a nosotros. Si eres residente en la Unión Europea, esto es coherente
+    con los derechos de acceso, rectificación, portabilidad y supresión que te reconoce el
+    RGPD. Para cualquier duda sobre los datos que sí procesamos (sección 4), puedes
+    escribirnos a la dirección de contacto de abajo.
+  </p>
 
-    <section>
-      <h2 data-i18n="legal.changes.title">8. Cambios en esta política</h2>
-      <p data-i18n="legal.changes.body">Si actualizamos esta política, cambiaremos la fecha de "última actualización" en la parte superior de esta página. Los cambios importantes (como la llegada del Pack Premium) se anunciarán también dentro de la propia app.</p>
-    </section>
+  <h2>8. Menores de edad</h2>
+  <p>
+    SmartFlow no está dirigida a menores de edad y no recopila conscientemente datos de
+    menores. Si crees que un menor nos ha proporcionado datos personales a través de la
+    función Premium, contáctanos y lo eliminaremos.
+  </p>
 
-    <section>
-      <h2 data-i18n="legal.contact.title">9. Contacto</h2>
-      <p data-i18n="legal.contact.body">Para cualquier pregunta sobre esta política o sobre SmartFlow en general: <a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a>.</p>
-    </section>
-  </main>
+  <h2>9. Cambios en esta política</h2>
+  <p>
+    Podemos actualizar esta política si cambiamos cómo funciona la aplicación (por ejemplo,
+    al añadir una nueva función). Publicaremos cualquier cambio en esta misma página, con la
+    fecha de actualización arriba.
+  </p>
 
-  <!-- ============================== FOOTER ================================ -->
-  <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <div>
-        <a href="index.html" class="footer-brand">
-          <img src="assets/icon.png" alt="">
-          SmartFlow
-        </a>
-        <p class="footer-tagline" data-i18n="footer.tagline">Parte de la saga SmartBalance</p>
-      </div>
+  <div class="contact">
+    <p style="margin:0 0 4px; font-weight:700;">¿Alguna pregunta sobre tu privacidad?</p>
+    <p style="margin:0;"><a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a></p>
+  </div>
 
-      <nav class="footer-links" aria-label="Enlaces">
-        <a href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
-        <a href="mailto:smartbalanceapp@gmail.com" data-i18n="nav.contact">Contacto</a>
-      </nav>
-
-      <p class="footer-copy">© 2026 SmartFlow — SmartBalance</p>
-    </div>
+  <footer>
+    SmartFlow — parte de la saga SmartBalance
   </footer>
 
-  <script src="js/main.js"></script>
+</div>
 </body>
 </html>
