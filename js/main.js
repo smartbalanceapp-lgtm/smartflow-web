@@ -3,16 +3,13 @@
    Tema claro/oscuro + selector de idioma (detecta navegador, permite
    override manual, persiste en localStorage). Sin dependencias.
    ========================================================================== */
-
 (function () {
   'use strict';
-
   var root = document.documentElement;
   var STORAGE_THEME = 'sf_theme';
   var STORAGE_LANG = 'sf_lang';
   var SUPPORTED_LANGS = ['es', 'ca', 'en'];
   var DEFAULT_LANG = 'es';
-
   /* ---------------------------------------------------------------------
      Tema claro / oscuro
      --------------------------------------------------------------------- */
@@ -21,16 +18,13 @@
     if (stored === 'light' || stored === 'dark') return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     var toggle = document.querySelector('[data-theme-toggle]');
     if (toggle) toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
   }
-
   function initTheme() {
     applyTheme(getPreferredTheme());
-
     var toggle = document.querySelector('[data-theme-toggle]');
     if (toggle) {
       toggle.addEventListener('click', function () {
@@ -40,15 +34,12 @@
         applyTheme(next);
       });
     }
-
-    // Si el usuario no ha fijado preferencia manual, sigue al sistema en vivo
     if (!localStorage.getItem(STORAGE_THEME) && window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         applyTheme(e.matches ? 'dark' : 'light');
       });
     }
   }
-
   /* ---------------------------------------------------------------------
      Idioma
      --------------------------------------------------------------------- */
@@ -67,7 +58,6 @@
       'hero.sub': 'SmartFlow no te pide las claves de tu banco, tus tarjetas ni tu bróker de inversión. Tú decides qué apuntas, y tus datos se quedan en tu móvil. Sin anuncios, sin venta de datos.',
       'hero.cta': 'Próximamente en Google Play',
       'hero.note': 'Android · En prueba cerrada ahora mismo — el lanzamiento público llega pronto.',
-
       'features.eyebrow': 'Todo lo que hace SmartFlow',
       'features.title': 'Una app, todo tu dinero',
       'features.sub': 'Movimientos, presupuesto, cuentas, inversión, inmuebles y patrimonio — sin cambiar de app.',
@@ -96,7 +86,6 @@
       'feature.security.desc': 'Bloqueo por PIN o biometría, base de datos cifrada en tu móvil, copia de seguridad en JSON.',
       'feature.widget.title': 'Widget de inicio',
       'feature.widget.desc': 'Registra un gasto o un ingreso por voz sin ni siquiera abrir la app.',
-
       'how.eyebrow': 'Sin conectar tu banco',
       'how.title': 'Automático de verdad, sin darle tus claves a nadie',
       'how.sub': 'No conectar tu banco no significa apuntarlo todo a mano. SmartFlow hace la parte pesada por ti.',
@@ -106,7 +95,6 @@
       'how.step2.desc': 'Nómina, alquiler, hipoteca, aportaciones a fondos... lo recurrente se propone cada mes en ingresos, ahorro, gastos e inversión. Tú solo confirmas.',
       'how.step3.title': 'Todo se calcula',
       'how.step3.desc': 'Presupuesto, patrimonio y rentabilidad se actualizan en el momento — sin hojas de cálculo ni recalcular nada a mano.',
-
       'why.eyebrow': 'Por qué SmartFlow',
       'why.title': 'Tus datos, tus decisiones',
       'why.nobank.title': 'Sin conectar tu banco',
@@ -119,7 +107,6 @@
       'why.trilingual.desc': 'Español, catalán e inglés revisados frase a frase — casi mil claves de texto, no traducción automática.',
       'why.free.title': 'Gratis en el lanzamiento',
       'why.free.desc': 'Todo lo de arriba, sin coste. El Pack Premium llegará más adelante como algo extra, no como un candado a lo que ya tienes.',
-
       'screens.eyebrow': 'Así se ve por dentro',
       'screens.title': 'Diseñada para mirarla cada día',
       'screens.dashboard': 'Dashboard',
@@ -130,14 +117,12 @@
       'screens.property': 'Inmuebles',
       'screens.savings': 'Ahorro',
       'screens.profile': 'Perfil',
-
       'premium.badge': 'Próximamente',
       'premium.title': 'Un Pack Premium está en camino',
       'premium.desc': 'Un asistente con IA que conoce tus números para ayudarte a decidir mejor, además de otras funciones para ahorrarte trabajo. Todavía sin fecha — y la versión gratuita seguirá siendo gratis.',
-
       'footer.tagline': 'Parte de la saga SmartBalance',
       'footer.privacy': 'Privacidad',
-
+      'footer.terms': 'Términos de uso',
       'legal.back': '← Volver a SmartFlow',
       'legal.title': 'Política de privacidad',
       'legal.updated': 'Última actualización: 29 de julio de 2026',
@@ -178,7 +163,6 @@
       'hero.sub': 'SmartFlow no et demana les claus del teu banc, les teves targetes ni el teu bròker d\'inversió. Tu decideixes què apuntes, i les teves dades es queden al teu mòbil. Sense anuncis, sense venda de dades.',
       'hero.cta': 'Properament a Google Play',
       'hero.note': 'Android · En prova tancada ara mateix — el llançament públic arriba aviat.',
-
       'features.eyebrow': 'Tot el que fa SmartFlow',
       'features.title': 'Una app, tots els teus diners',
       'features.sub': 'Moviments, pressupost, comptes, inversió, immobles i patrimoni — sense canviar d\'app.',
@@ -207,7 +191,6 @@
       'feature.security.desc': 'Bloqueig per PIN o biometria, base de dades xifrada al teu mòbil, còpia de seguretat en JSON.',
       'feature.widget.title': 'Widget d\'inici',
       'feature.widget.desc': 'Registra una despesa o un ingrés per veu sense ni obrir l\'app.',
-
       'how.eyebrow': 'Sense connectar el teu banc',
       'how.title': 'Automàtic de veritat, sense donar les teves claus a ningú',
       'how.sub': 'No connectar el teu banc no vol dir apuntar-ho tot a mà. SmartFlow fa la part feixuga per tu.',
@@ -217,7 +200,6 @@
       'how.step2.desc': 'Nòmina, lloguer, hipoteca, aportacions a fons... el que és recurrent es proposa cada mes en ingressos, estalvi, despeses i inversió. Tu només confirmes.',
       'how.step3.title': 'Tot es calcula',
       'how.step3.desc': 'Pressupost, patrimoni i rendibilitat s\'actualitzen a l\'instant — sense fulls de càlcul ni recalcular res a mà.',
-
       'why.eyebrow': 'Per què SmartFlow',
       'why.title': 'Les teves dades, les teves decisions',
       'why.nobank.title': 'Sense connectar el teu banc',
@@ -230,7 +212,6 @@
       'why.trilingual.desc': 'Espanyol, català i anglès revisats frase a frase — gairebé mil claus de text, no traducció automàtica.',
       'why.free.title': 'Gratis en el llançament',
       'why.free.desc': 'Tot això, sense cost. El Pack Premium arribarà més endavant com un extra, no com un cadenat al que ja tens.',
-
       'screens.eyebrow': 'Així es veu per dins',
       'screens.title': 'Dissenyada per mirar-la cada dia',
       'screens.dashboard': 'Tauler',
@@ -241,14 +222,12 @@
       'screens.property': 'Immobles',
       'screens.savings': 'Estalvi',
       'screens.profile': 'Perfil',
-
       'premium.badge': 'Properament',
       'premium.title': 'Un Pack Premium està en camí',
       'premium.desc': 'Un assistent amb IA que coneix les teves xifres per ajudar-te a decidir millor, a més d\'altres funcions per estalviar-te feina. Encara sense data — i la versió gratuïta seguirà sent gratuïta.',
-
       'footer.tagline': 'Part de la saga SmartBalance',
       'footer.privacy': 'Privacitat',
-
+      'footer.terms': 'Termes d\'ús',
       'legal.back': '← Torna a SmartFlow',
       'legal.title': 'Política de privacitat',
       'legal.updated': 'Última actualització: 29 de juliol de 2026',
@@ -289,7 +268,6 @@
       'hero.sub': 'SmartFlow never asks for your bank credentials, your card numbers, or access to your broker. You decide what to log, and your data stays on your phone. No ads, no data selling.',
       'hero.cta': 'Coming soon to Google Play',
       'hero.note': 'Android · Currently in closed testing — public launch is coming soon.',
-
       'features.eyebrow': 'Everything SmartFlow does',
       'features.title': 'One app, all your money',
       'features.sub': 'Transactions, budget, accounts, investing, properties and net worth — without switching apps.',
@@ -318,7 +296,6 @@
       'feature.security.desc': 'PIN or biometric lock, database encrypted on your phone, JSON backup and restore.',
       'feature.widget.title': 'Home screen widget',
       'feature.widget.desc': 'Log an expense or income by voice without even opening the app.',
-
       'how.eyebrow': 'No bank connection',
       'how.title': 'Genuinely automatic, without handing your credentials to anyone',
       'how.sub': 'Not connecting your bank doesn\'t mean logging everything by hand. SmartFlow does the heavy lifting for you.',
@@ -328,7 +305,6 @@
       'how.step2.desc': 'Salary, rent, mortgage, fund contributions... recurring items are suggested every month across income, savings, expenses and investing. You just confirm.',
       'how.step3.title': 'It all adds up',
       'how.step3.desc': 'Budget, net worth and returns update instantly — no spreadsheets, no manual recalculating.',
-
       'why.eyebrow': 'Why SmartFlow',
       'why.title': 'Your data, your decisions',
       'why.nobank.title': 'No bank connection',
@@ -341,7 +317,6 @@
       'why.trilingual.desc': 'Spanish, Catalan and English reviewed sentence by sentence — nearly a thousand text keys, not machine translation.',
       'why.free.title': 'Free at launch',
       'why.free.desc': 'Everything above, at no cost. The Premium Pack will arrive later as an extra, not a lock on what you already have.',
-
       'screens.eyebrow': 'A look inside',
       'screens.title': 'Built to check every day',
       'screens.dashboard': 'Dashboard',
@@ -352,14 +327,12 @@
       'screens.property': 'Properties',
       'screens.savings': 'Savings',
       'screens.profile': 'Profile',
-
       'premium.badge': 'Coming soon',
       'premium.title': 'A Premium Pack is on its way',
       'premium.desc': 'An AI assistant that knows your numbers to help you decide better, plus other features to save you work. No date yet — and the free version will stay free.',
-
       'footer.tagline': 'Part of the SmartBalance saga',
       'footer.privacy': 'Privacy',
-
+      'footer.terms': 'Terms of Use',
       'legal.back': '← Back to SmartFlow',
       'legal.title': 'Privacy Policy',
       'legal.updated': 'Last updated: July 29, 2026',
@@ -387,40 +360,30 @@
       'legal.contact.body': 'For any question about this policy or about SmartFlow in general: <a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a>.'
     }
   };
-
   function getPreferredLang() {
     var stored = localStorage.getItem(STORAGE_LANG);
     if (stored && SUPPORTED_LANGS.indexOf(stored) !== -1) return stored;
     var nav = (navigator.language || DEFAULT_LANG).slice(0, 2).toLowerCase();
     return SUPPORTED_LANGS.indexOf(nav) !== -1 ? nav : DEFAULT_LANG;
   }
-
   function applyLang(lang) {
     var dict = translations[lang] || translations[DEFAULT_LANG];
     root.setAttribute('lang', lang);
-
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      // innerHTML a propósito: algunas claves (ej. párrafos legales) llevan
-      // enlaces mailto embebidos. El diccionario es contenido propio, no
-      // entrada de usuario, así que no hay riesgo de inyección.
       if (dict[key]) el.innerHTML = dict[key];
     });
-
     document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria');
       if (dict[key]) el.setAttribute('aria-label', dict[key]);
     });
-
     document.querySelectorAll('.lang-switch button').forEach(function (btn) {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
   }
-
   function initLang() {
     var lang = getPreferredLang();
     applyLang(lang);
-
     document.querySelectorAll('.lang-switch button').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var chosen = btn.getAttribute('data-lang');
@@ -429,7 +392,6 @@
       });
     });
   }
-
   document.addEventListener('DOMContentLoaded', function () {
     initTheme();
     initLang();
