@@ -634,11 +634,62 @@ b, strong, .plan__amount, .float-chip strong, .mini-line b, .mini-row span:last-
 .float-chip--a strong { color: var(--primary-dark); }
 .float-chip--b { bottom: 14%; right: -22%; animation-delay: -3.2s; }
 
+/* --- Flux en el hero --- */
+.hero__flux {
+  position: absolute;
+  z-index: 5;
+  left: -50%;
+  bottom: -2%;
+  width: clamp(112px, 14vw, 168px);
+  animation: phone-float 6.5s ease-in-out infinite;
+  animation-delay: -2.2s;
+}
+.hero__flux img {
+  width: 100%;
+  filter: drop-shadow(0 16px 30px rgba(6, 33, 25, .30));
+}
+:root[data-theme="dark"] .hero__flux img {
+  filter: drop-shadow(0 0 28px rgba(103, 232, 249, .28));
+}
+
+/* Bocadillo, con la colita apuntando a Flux */
+.speech {
+  position: relative;
+  display: inline-block;
+  padding: 9px 15px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-md);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.speech::after {
+  content: '';
+  position: absolute;
+  left: 26px;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-right: inherit;
+  border-bottom: inherit;
+  transform: rotate(45deg);
+  border-bottom-right-radius: 3px;
+}
+.hero__flux .speech { margin-left: 8%; margin-bottom: 4px; }
+
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: 1fr; }
   .hero__device { margin-top: 12px; width: min(100%, 290px); }
-  .float-chip--a { left: -6%; }
   .float-chip--b { right: -4%; }
+  .hero__flux { left: -32%; bottom: -2%; }
+}
+@media (max-width: 520px) {
+  .hero__flux { left: -18%; bottom: -5%; width: 100px; }
+  .hero__flux .speech { font-size: .78rem; padding: 7px 12px; }
 }
 @media (max-width: 760px) {
   /* En vertical el SVG se amplía tanto que las líneas cruzan el titular */
@@ -806,6 +857,186 @@ b, strong, .plan__amount, .float-chip strong, .mini-line b, .mini-row span:last-
   .step__art { grid-column: 1 / -1; }
   .step:nth-child(2), .step:nth-child(3) { margin-left: 0; }
   .step__num { font-size: 2rem; }
+}
+
+/* ==========================================================================
+   8 bis. Estados de Flux
+   ==========================================================================
+   El escenario es oscuro a propósito, dentro de una sección clara: Flux es
+   cian luminoso y sobre fondo claro se lava. Además es el mismo verde del
+   tema oscuro de la app, así que no es un parche, es la app.
+   ========================================================================== */
+.mood {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--r-xl);
+  background: linear-gradient(150deg, #04241A 0%, #063A2A 52%, #052A20 100%);
+  box-shadow: var(--sh-lg);
+}
+.mood__glow { position: absolute; inset: 0; pointer-events: none; }
+.orb--5 {
+  width: 460px; aspect-ratio: 1; top: -46%; left: -12%;
+  background: radial-gradient(circle, rgba(103, 232, 249, .30) 0%, transparent 66%);
+}
+.orb--6 {
+  width: 420px; aspect-ratio: 1; bottom: -46%; right: -8%;
+  background: radial-gradient(circle, rgba(245, 158, 11, .20) 0%, transparent 66%);
+}
+
+.mood__stage {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+.mood__stage .speech {
+  background: rgba(255, 255, 255, .95);
+  border-color: transparent;
+  color: #04241A;
+}
+.speech--lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(.9rem, .5vw + .8rem, 1.05rem);
+  line-height: 1.35;
+  padding: 12px 20px;
+  /* Hueco reservado para dos líneas: si no, Flux sube y baja cada vez que
+     la frase cambia de largo */
+  min-height: calc(2 * 1.35em + 29px);
+  text-align: center;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+/* Las cinco caras ocupan la misma celda y se cruzan con un fundido */
+.mood__faces {
+  display: grid;
+  width: min(100%, 260px);
+  aspect-ratio: 1;
+  animation: phone-float 6s ease-in-out infinite;
+}
+.mood__faces img {
+  grid-area: 1 / 1;
+  width: 100%;
+  opacity: 0;
+  transform: scale(.88);
+  transition: opacity 300ms var(--ease-out), transform 420ms var(--ease-out);
+  filter: drop-shadow(0 0 34px rgba(103, 232, 249, .30));
+}
+.mood__faces img.is-on { opacity: 1; transform: none; }
+/* Sin JS se ve el primero, no una pila de fantasmas invisibles */
+.no-js .mood__faces img:first-child { opacity: 1; transform: none; }
+
+.mood__panel { position: relative; z-index: 2; display: grid; gap: 22px; }
+
+.meter { display: grid; gap: 9px; }
+.meter__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #9FCDB9;
+}
+.meter__head b { font-size: 1.15rem; font-weight: 800; color: #fff; letter-spacing: -.02em; }
+.meter__bar {
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .11);
+  overflow: hidden;
+}
+.meter__bar i {
+  display: block;
+  height: 100%;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  transition: width 220ms var(--ease), background 320ms var(--ease);
+}
+.mood[data-level="careful"] .meter__bar i { background: linear-gradient(90deg, var(--accent-light), var(--accent)); }
+.mood[data-level="over"] .meter__bar i { background: linear-gradient(90deg, #FCA5A5, #EF4444); }
+
+.mood__slider { display: grid; gap: 10px; }
+.mood__slider > span { font-size: .8rem; font-weight: 600; color: #9FCDB9; }
+
+.mood__slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 26px;
+  background: none;
+  cursor: grab;
+}
+.mood__slider input[type="range"]:active { cursor: grabbing; }
+.mood__slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .16);
+}
+.mood__slider input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .16);
+}
+.mood__slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -9px;
+  border-radius: 50%;
+  background: #fff;
+  border: 5px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+  transition: transform var(--t-fast);
+}
+.mood__slider input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 5px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+}
+.mood__slider input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.1); }
+
+.mood__legend { display: flex; flex-wrap: wrap; gap: 7px; }
+.mood__legend button {
+  padding: 7px 13px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .05);
+  color: #B6DCCB;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: background-color var(--t-fast), color var(--t-fast),
+              border-color var(--t-fast), transform var(--t-fast);
+}
+.mood__legend button:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.mood__legend button:active { transform: scale(.96); }
+.mood__legend button[aria-pressed="true"] {
+  background: var(--primary);
+  border-color: transparent;
+  color: #04241A;
+}
+.mood__legend button.is-missing { display: none; }
+
+.mood__note {
+  font-size: .78rem;
+  line-height: 1.5;
+  color: #7FB49E;
+}
+
+@media (max-width: 880px) {
+  .mood { grid-template-columns: 1fr; }
+  .mood__stage { order: -1; }
 }
 
 /* ==========================================================================
