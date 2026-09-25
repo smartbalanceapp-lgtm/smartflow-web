@@ -19,6 +19,7 @@ var LAUNCHED = false;
   var KEY_LANG = 'sf_lang';
   var LANGS = ['es', 'ca', 'en'];
   var FALLBACK = 'es';
+  var CURRENT_LANG = FALLBACK;
   var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.manel.smartflow';
 
   root.classList.remove('no-js');
@@ -52,8 +53,31 @@ var LAUNCHED = false;
     'hero.trust2': 'Sin anuncios',
     'hero.trust3': 'Español, catalán e inglés',
 
-    'chip.saving': 'Ahorro del mes',
     'chip.networth': 'Patrimonio neto',
+    'hero.flux': '¡Hola! Soy Flux',
+    'mood.eyebrow': 'Flux tiene cara',
+    'mood.title': 'Sabes cómo va el mes antes de leer un número',
+    'mood.sub': 'Flux vive en tu dashboard y cambia de humor según cómo llevas el presupuesto. Pruébalo aquí mismo.',
+    'mood.budget': 'Presupuesto del mes',
+    'mood.slider': 'Muévelo y mira qué le pasa a Flux',
+    'mood.legend': 'Estados de Flux',
+    'mood.note': 'Las frases son las mismas que verás en la app, palabra por palabra, en los tres idiomas.',
+    'mood.great': 'Este mes vas genial',
+    'mood.good': 'Este mes vas bien',
+    'mood.watch': 'Controla un poco el gasto',
+    'mood.careful': 'Cuidado, casi sin margen',
+    'mood.over': 'Te has pasado del presupuesto',
+    'mood.tag.great': 'Genial',
+    'mood.tag.good': 'Bien',
+    'mood.tag.watch': 'Ojo',
+    'mood.tag.careful': 'Al límite',
+    'mood.tag.over': 'Pasado',
+    'alt.flux.hero': 'Flux, la mascota de SmartFlow, saludando con los brazos en alto',
+    'alt.flux.great': 'Flux con los brazos en alto y los ojos brillantes',
+    'alt.flux.good': 'Flux sonriendo tranquilo',
+    'alt.flux.watch': 'Flux serio, vigilando el gasto',
+    'alt.flux.careful': 'Flux preocupado, con una gota de sudor',
+    'alt.flux.over': 'Flux enfadado, con los brazos cruzados',
 
     'strip.1': '3 idiomas revisados a mano',
     'strip.2': '32 divisas',
@@ -249,8 +273,31 @@ var LAUNCHED = false;
     'hero.trust2': 'Sense anuncis',
     'hero.trust3': 'Català, castellà i anglès',
 
-    'chip.saving': 'Estalvi del mes',
     'chip.networth': 'Patrimoni net',
+    'hero.flux': 'Hola! Sóc en Flux',
+    'mood.eyebrow': 'En Flux té cara',
+    'mood.title': 'Saps com va el mes abans de llegir cap número',
+    'mood.sub': 'En Flux viu al teu tauler i canvia d’humor segons com portes el pressupost. Prova-ho aquí mateix.',
+    'mood.budget': 'Pressupost del mes',
+    'mood.slider': 'Mou-lo i mira què li passa a en Flux',
+    'mood.legend': 'Estats d’en Flux',
+    'mood.note': 'Les frases són les mateixes que veuràs a l’app, paraula per paraula, en els tres idiomes.',
+    'mood.great': 'Aquest mes vas genial',
+    'mood.good': 'Aquest mes vas bé',
+    'mood.watch': 'Vigila una mica la despesa',
+    'mood.careful': 'Compte, quasi sense marge',
+    'mood.over': 'T’has passat del pressupost',
+    'mood.tag.great': 'Genial',
+    'mood.tag.good': 'Bé',
+    'mood.tag.watch': 'Ull',
+    'mood.tag.careful': 'Al límit',
+    'mood.tag.over': 'Passat',
+    'alt.flux.hero': 'En Flux, la mascota de SmartFlow, saludant amb els braços enlaire',
+    'alt.flux.great': 'En Flux amb els braços enlaire i els ulls brillants',
+    'alt.flux.good': 'En Flux somrient tranquil',
+    'alt.flux.watch': 'En Flux seriós, vigilant la despesa',
+    'alt.flux.careful': 'En Flux preocupat, amb una gota de suor',
+    'alt.flux.over': 'En Flux enfadat, amb els braços creuats',
 
     'strip.1': '3 idiomes revisats a mà',
     'strip.2': '32 divises',
@@ -446,8 +493,31 @@ var LAUNCHED = false;
     'hero.trust2': 'No ads',
     'hero.trust3': 'Spanish, Catalan and English',
 
-    'chip.saving': 'Saved this month',
     'chip.networth': 'Net worth',
+    'hero.flux': 'Hi! I’m Flux',
+    'mood.eyebrow': 'Flux has a face',
+    'mood.title': 'You know how the month is going before you read a single number',
+    'mood.sub': 'Flux lives on your dashboard and changes mood depending on how your budget is holding up. Try it right here.',
+    'mood.budget': 'This month’s budget',
+    'mood.slider': 'Drag it and watch what happens to Flux',
+    'mood.legend': 'Flux states',
+    'mood.note': 'These are the exact phrases you’ll see in the app, word for word, in all three languages.',
+    'mood.great': 'You’re doing great this month',
+    'mood.good': 'You’re doing well this month',
+    'mood.watch': 'Watch your spending a bit',
+    'mood.careful': 'Careful, you’re almost out of budget',
+    'mood.over': 'You’ve gone over budget',
+    'mood.tag.great': 'Great',
+    'mood.tag.good': 'Good',
+    'mood.tag.watch': 'Watch',
+    'mood.tag.careful': 'Tight',
+    'mood.tag.over': 'Over',
+    'alt.flux.hero': 'Flux, the SmartFlow mascot, waving with both arms up',
+    'alt.flux.great': 'Flux with both arms up and sparkling eyes',
+    'alt.flux.good': 'Flux smiling calmly',
+    'alt.flux.watch': 'Flux looking serious, keeping an eye on spending',
+    'alt.flux.careful': 'Flux worried, with a bead of sweat',
+    'alt.flux.over': 'Flux angry, with arms crossed',
 
     'strip.1': '3 languages, reviewed by hand',
     'strip.2': '32 currencies',
@@ -698,6 +768,7 @@ var LAUNCHED = false;
   function applyLang(lang) {
     var dict = T[lang] || T[FALLBACK];
     var base = T[FALLBACK];
+    CURRENT_LANG = T[lang] ? lang : FALLBACK;
     root.setAttribute('lang', lang);
 
     each('[data-i18n]', function (el) {
@@ -729,6 +800,7 @@ var LAUNCHED = false;
     if (ogt) ogt.setAttribute('content', meta.title);
 
     applyStoreState(lang);
+    if (moodRefresh) moodRefresh();
   }
 
   function initLang() {
@@ -862,6 +934,100 @@ var LAUNCHED = false;
   }
 
   /* =======================================================================
+     Estados de Flux
+     -----------------------------------------------------------------------
+     Los tramos van en % de presupuesto gastado. Si alguno no cuadra con el
+     de la app, se cambia AQUÍ y en ningún otro sitio.
+     ======================================================================= */
+  var MOOD_LEVELS = [
+    {key: 'great', upTo: 49},
+    {key: 'good', upTo: 74},
+    {key: 'watch', upTo: 89},
+    {key: 'careful', upTo: 100},
+    {key: 'over', upTo: Infinity},
+  ];
+
+  var moodRefresh = null;
+
+  function initMood() {
+    var box = document.querySelector('[data-mood]');
+    if (!box) return;
+
+    var range = box.querySelector('[data-mood-range]');
+    var pctEl = box.querySelector('[data-mood-pct]');
+    var barEl = box.querySelector('[data-mood-bar]');
+    var phraseEl = box.querySelector('[data-mood-phrase]');
+    var faces = {};
+    var ready = {};
+
+    // Si todavía no existe el PNG de algún estado, ese estado desaparece de
+    // la leyenda y su tramo lo cubre el vecino. Así se puede subir la web
+    // antes que las imágenes sin que quede ningún icono roto.
+    function markMissing(key) {
+      if (ready[key] === false) return;
+      ready[key] = false;
+      var btn = box.querySelector('[data-mood-key="' + key + '"]');
+      if (btn) btn.classList.add('is-missing');
+      apply();
+    }
+
+    Array.prototype.forEach.call(box.querySelectorAll('[data-mood-face]'), function (img) {
+      var key = img.getAttribute('data-mood-face');
+      faces[key] = img;
+      ready[key] = true;
+      img.addEventListener('error', function () { markMissing(key); });
+      if (img.complete && img.naturalWidth === 0) markMissing(key);
+    });
+
+    function levelFor(pct) {
+      var i = 0;
+      while (i < MOOD_LEVELS.length - 1 && pct > MOOD_LEVELS[i].upTo) i++;
+      if (ready[MOOD_LEVELS[i].key]) return MOOD_LEVELS[i].key;
+      for (var d = 1; d < MOOD_LEVELS.length; d++) {
+        var down = MOOD_LEVELS[i - d];
+        if (down && ready[down.key]) return down.key;
+        var up = MOOD_LEVELS[i + d];
+        if (up && ready[up.key]) return up.key;
+      }
+      return null;
+    }
+
+    function apply() {
+      var pct = parseInt(range.value, 10);
+      if (isNaN(pct)) pct = 0;
+      var key = levelFor(pct);
+
+      pctEl.textContent = pct;
+      barEl.style.width = Math.min(pct, 100) + '%';
+      box.setAttribute('data-level', key || '');
+
+      Object.keys(faces).forEach(function (k) {
+        faces[k].classList.toggle('is-on', k === key);
+      });
+
+      var dict = T[CURRENT_LANG] || T[FALLBACK];
+      if (key) phraseEl.textContent = dict['mood.' + key] || T[FALLBACK]['mood.' + key];
+
+      Array.prototype.forEach.call(box.querySelectorAll('[data-mood-key]'), function (btn) {
+        btn.setAttribute('aria-pressed',
+          btn.getAttribute('data-mood-key') === key ? 'true' : 'false');
+      });
+    }
+
+    range.addEventListener('input', apply);
+
+    Array.prototype.forEach.call(box.querySelectorAll('[data-mood-go]'), function (btn) {
+      btn.addEventListener('click', function () {
+        range.value = btn.getAttribute('data-mood-go');
+        apply();
+      });
+    });
+
+    moodRefresh = apply;
+    apply();
+  }
+
+  /* =======================================================================
      Carrusel de capturas
      ======================================================================= */
   function initRail() {
@@ -899,6 +1065,7 @@ var LAUNCHED = false;
     initHeader();
     initActiveNav();
     initReveal();
+    initMood();
     initRail();
   }
 
