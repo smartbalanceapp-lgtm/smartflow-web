@@ -132,13 +132,14 @@
                  data-i18n-alt="alt.dashboard" alt="Pantalla principal de SmartFlow con el resumen del mes y el patrimonio neto">
           </div>
         </div>
-        <div class="float-chip float-chip--a" aria-hidden="true">
-          <strong>+1.500,00 €</strong>
-          <span data-i18n="chip.saving">Ahorro del mes</span>
-        </div>
         <div class="float-chip float-chip--b" aria-hidden="true">
           <strong>85.135,26 €</strong>
           <span data-i18n="chip.networth">Patrimonio neto</span>
+        </div>
+        <div class="hero__flux">
+          <p class="speech" data-i18n="hero.flux">¡Hola! Soy Flux</p>
+          <img src="assets/flux/flux_great.png" width="200" height="200" decoding="async"
+               data-i18n-alt="alt.flux.hero" alt="Flux, la mascota de SmartFlow, con los brazos en alto">
         </div>
       </div>
     </div>
@@ -213,6 +214,58 @@
           </div>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- ========================= ESTADOS DE FLUX ========================== -->
+  <section class="section" id="estados">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="mood.eyebrow">Flux tiene cara</span></p>
+        <h2 data-reveal data-i18n="mood.title">Sabes cómo va el mes antes de leer un número</h2>
+        <p class="lede lede--sm" data-reveal data-i18n="mood.sub">Flux vive en tu dashboard y cambia de humor según cómo llevas el presupuesto. Pruébalo aquí mismo.</p>
+      </header>
+
+      <div class="mood" data-mood data-reveal>
+        <div class="mood__glow" aria-hidden="true"><span class="orb orb--5"></span><span class="orb orb--6"></span></div>
+
+        <div class="mood__stage">
+          <p class="speech speech--lg" data-mood-phrase aria-live="polite">Este mes vas bien</p>
+          <div class="mood__faces">
+            <img loading="lazy" decoding="async" data-mood-face="great"   src="assets/flux/flux_great.png"   width="260" height="260" data-i18n-alt="alt.flux.great"   alt="Flux con los brazos en alto y los ojos brillantes">
+            <img loading="lazy" decoding="async" data-mood-face="good"    src="assets/flux/flux_good.png"    width="260" height="260" data-i18n-alt="alt.flux.good"    alt="Flux sonriendo tranquilo">
+            <img loading="lazy" decoding="async" data-mood-face="watch"   src="assets/flux/flux_watch.png"   width="260" height="260" data-i18n-alt="alt.flux.watch"   alt="Flux serio, vigilando">
+            <img loading="lazy" decoding="async" data-mood-face="careful" src="assets/flux/flux_careful.png" width="260" height="260" data-i18n-alt="alt.flux.careful" alt="Flux preocupado, con una gota de sudor">
+            <img loading="lazy" decoding="async" data-mood-face="over"    src="assets/flux/flux_over.png"    width="260" height="260" data-i18n-alt="alt.flux.over"    alt="Flux enfadado, con los brazos cruzados">
+          </div>
+        </div>
+
+        <div class="mood__panel">
+          <div class="meter">
+            <div class="meter__head">
+              <span data-i18n="mood.budget">Presupuesto del mes</span>
+              <b><span data-mood-pct>62</span>%</b>
+            </div>
+            <div class="meter__bar"><i data-mood-bar style="width:62%"></i></div>
+          </div>
+
+          <label class="mood__slider">
+            <span data-i18n="mood.slider">Muévelo y mira qué le pasa a Flux</span>
+            <input type="range" min="0" max="130" value="62" step="1"
+                   data-mood-range data-i18n-aria="mood.slider" aria-label="Muévelo y mira qué le pasa a Flux">
+          </label>
+
+          <div class="mood__legend" role="group" data-i18n-aria="mood.legend" aria-label="Estados de Flux">
+            <button type="button" data-mood-go="25"  data-mood-key="great"><span data-i18n="mood.tag.great">Genial</span></button>
+            <button type="button" data-mood-go="62"  data-mood-key="good"><span data-i18n="mood.tag.good">Bien</span></button>
+            <button type="button" data-mood-go="82"  data-mood-key="watch"><span data-i18n="mood.tag.watch">Ojo</span></button>
+            <button type="button" data-mood-go="95"  data-mood-key="careful"><span data-i18n="mood.tag.careful">Al límite</span></button>
+            <button type="button" data-mood-go="118" data-mood-key="over"><span data-i18n="mood.tag.over">Pasado</span></button>
+          </div>
+
+          <p class="mood__note" data-i18n="mood.note">Las frases son las mismas que verás en la app, palabra por palabra, en los tres idiomas.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -347,7 +400,7 @@
       <div class="flux__chat" data-reveal>
         <div class="chat">
           <div class="chat__head">
-            <img src="assets/flux_transparent.png" alt="" width="40" height="40" loading="lazy">
+            <img src="assets/flux/flux_good.png" alt="" width="40" height="40" loading="lazy">
             <div>
               <strong>Flux</strong>
               <span data-i18n="flux.chat.status">Con tus datos de septiembre</span>
@@ -359,7 +412,7 @@
           </div>
           <div class="chat__foot"><span data-i18n="flux.chat.foot">40 consultas al mes · Se renuevan cada mes</span></div>
         </div>
-        <img class="flux__mascot" src="assets/flux_transparent.png" alt="" width="180" height="180" loading="lazy">
+        <img class="flux__mascot" src="assets/flux/flux_good.png" alt="" width="240" height="240" loading="lazy">
       </div>
     </div>
   </section>
