@@ -1,288 +1,615 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartFlow — El dinero fluye, tú lo controlas</title>
-  <meta name="description" content="SmartFlow es la app de finanzas personales local-first para Android. Sin anuncios, sin venta de datos. Trilingüe de verdad.">
+  <meta name="description" content="App de finanzas personales para Android: movimientos por voz, presupuesto 50/30/20, inmuebles con hipoteca real, inversión y patrimonio neto. Sin conectar tu banco, sin anuncios. Español, catalán e inglés.">
+  <meta name="theme-color" content="#10B981">
+  <link rel="canonical" href="https://smartflowapp.es/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SmartFlow">
+  <meta property="og:title" content="SmartFlow — El dinero fluye, tú lo controlas">
+  <meta property="og:description" content="Finanzas personales para Android sin conectar tu banco. Inmuebles con hipoteca real, inversión, patrimonio neto y un asistente con IA que conoce tus cifras.">
+  <meta property="og:image" content="assets/og.png">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- ============================= HEADER ============================= -->
-  <header class="site-header">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="top">
     <div class="container site-header__inner">
       <a href="#top" class="brand">
         <img src="assets/icon.png" alt="" width="34" height="34">
-        SmartFlow
+        <span>SmartFlow</span>
       </a>
-      <nav class="nav-links" aria-label="Secciones">
+
+      <nav class="nav-links" id="nav-links" aria-label="Secciones">
         <a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
         <a href="#funciones" data-i18n="nav.features">Funciones</a>
-        <a href="#por-que" data-i18n="nav.why">Por qué</a>
+        <a href="#flux" data-i18n="nav.flux">Flux</a>
+        <a href="#precios" data-i18n="nav.pricing">Precios</a>
         <a href="#capturas" data-i18n="nav.screens">Capturas</a>
-        <a href="#premium" data-i18n="nav.premium">Premium</a>
       </nav>
+
       <div class="header-controls">
-        <nav class="lang-switch" aria-label="Seleccionar idioma">
+        <nav class="lang-switch" aria-label="Idioma">
           <button type="button" data-lang="es" aria-pressed="true">ES</button>
           <button type="button" data-lang="ca" aria-pressed="false">CA</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </nav>
-        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" data-i18n-aria="theme.toggle" aria-label="Cambiar tema">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+
+        <button type="button" class="icon-btn theme-toggle" data-theme-toggle
+                aria-pressed="false" data-i18n-aria="a11y.theme" aria-label="Cambiar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        </button>
+
+        <button type="button" class="icon-btn menu-toggle" data-menu-toggle
+                aria-expanded="false" aria-controls="mobile-menu"
+                data-i18n-aria="a11y.menu" aria-label="Abrir menú">
+          <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
         </button>
       </div>
     </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="container">
+        <a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+        <a href="#funciones" data-i18n="nav.features">Funciones</a>
+        <a href="#flux" data-i18n="nav.flux">Flux</a>
+        <a href="#precios" data-i18n="nav.pricing">Precios</a>
+        <a href="#capturas" data-i18n="nav.screens">Capturas</a>
+        <a href="#privacidad" data-i18n="nav.privacy">Privacidad</a>
+      </div>
+    </div>
   </header>
-  <!-- ============================== HERO =============================== -->
-  <section class="hero" id="top">
-    <!-- Elemento de firma: línea de degradado que "fluye" en eco del eslogan -->
-    <svg class="hero__flow" viewBox="0 0 1180 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#10B981"/>
-          <stop offset="55%" stop-color="#34D399"/>
-          <stop offset="100%" stop-color="#F59E0B"/>
-        </linearGradient>
-      </defs>
-      <path class="flow-path flow-path--1" d="M-50,120 C 200,60 320,220 560,160 S 900,40 1230,140"/>
-      <path class="flow-path flow-path--2" d="M-50,320 C 220,380 380,220 620,300 S 950,420 1230,320"/>
-      <path class="flow-path flow-path--3" d="M-50,500 C 250,460 420,560 640,500 S 980,440 1230,520"/>
-    </svg>
+
+  <main id="main">
+
+  <!-- =============================== HERO =============================== -->
+  <section class="hero">
+    <div class="hero__ambient" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+      <svg class="hero__flow" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="60%">
+            <stop offset="0%" stop-color="#10B981" stop-opacity="0"/>
+            <stop offset="35%" stop-color="#34D399"/>
+            <stop offset="80%" stop-color="#F59E0B"/>
+            <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="flow-path flow-path--1" d="M-60,150 C 240,70 380,250 660,180 S 1060,40 1460,160"/>
+        <path class="flow-path flow-path--2" d="M-60,380 C 260,450 440,260 720,350 S 1100,490 1460,380"/>
+        <path class="flow-path flow-path--3" d="M-60,590 C 300,540 500,660 760,590 S 1140,510 1460,610"/>
+      </svg>
+    </div>
+
     <div class="container hero__inner">
-      <p class="eyebrow hero__badge">
-        <span data-i18n="hero.eyebrow">Finanzas personales · 100% local</span>
-      </p>
-      <h1 class="display-xl" data-i18n="hero.title">El dinero fluye, tú lo controlas</h1>
-      <p class="body-lg hero__sub" data-i18n="hero.sub">
-        SmartFlow no te pide las claves de tu banco, tus tarjetas ni tu bróker de inversión. Tú decides qué apuntas, y tus datos se quedan en tu móvil. Sin anuncios, sin venta de datos.
-      </p>
-      <div class="hero__actions">
-        <a href="#" class="btn-store" aria-disabled="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5c0-.4.2-.8.6-1L13 12l-9.4 9.5c-.4-.2-.6-.6-.6-1zM16.8 15.3 6 21.6l8.4-8.4 2.4 2.1zM20.2 10.6c.5.3.8.8.8 1.4s-.3 1.1-.8 1.4l-2.5 1.4-2.7-2.8 2.7-2.8 2.5 1.4zM6 2.4l10.8 6.3-2.4 2.1L6 2.4z"/></svg>
-          <span data-i18n="hero.cta">Próximamente en Google Play</span>
-        </a>
-        <span class="hero__note" data-i18n="hero.note">Android · En prueba cerrada ahora mismo — el lanzamiento público llega pronto.</span>
+      <div class="hero__copy">
+        <p class="eyebrow" data-reveal>
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="hero.eyebrow">Finanzas personales · Android</span>
+        </p>
+
+        <h1 class="display" data-reveal data-i18n="hero.title">El dinero fluye, tú lo controlas</h1>
+
+        <p class="lede" data-reveal data-i18n="hero.sub">
+          SmartFlow no te pide las claves de tu banco, tus tarjetas ni tu bróker. Tú decides qué apuntas — y casi nada hay que apuntarlo a mano.
+        </p>
+
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--primary" data-store-link href="https://play.google.com/store/apps/details?id=com.manel.smartflow">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5V3.5c0-.4.2-.8.6-1L13 12l-9.4 9.5c-.4-.2-.6-.6-.6-1zM16.8 15.3 6 21.6l8.4-8.4 2.4 2.1zM20.2 10.6c.5.3.8.8.8 1.4s-.3 1.1-.8 1.4l-2.5 1.4-2.7-2.8 2.7-2.8 2.5 1.4zM6 2.4l10.8 6.3-2.4 2.1L6 2.4z"/></svg>
+            <span data-store-label data-i18n="hero.cta">Descargar en Google Play</span>
+          </a>
+          <a class="btn btn--ghost" href="#precios" data-i18n="hero.cta2">Ver qué incluye gratis</a>
+        </div>
+
+        <ul class="hero__trust" data-reveal>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust1">Sin conectar tu banco</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust2">Sin anuncios</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust3">Español, catalán e inglés</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__device" data-reveal>
+        <div class="phone phone--hero">
+          <div class="phone__screen">
+            <img src="assets/screenshots/dashboard.png" width="360" height="760"
+                 data-i18n-alt="alt.dashboard" alt="Pantalla principal de SmartFlow con el resumen del mes y el patrimonio neto">
+          </div>
+        </div>
+        <div class="float-chip float-chip--a" aria-hidden="true">
+          <strong>+1.500,00 €</strong>
+          <span data-i18n="chip.saving">Ahorro del mes</span>
+        </div>
+        <div class="float-chip float-chip--b" aria-hidden="true">
+          <strong>85.135,26 €</strong>
+          <span data-i18n="chip.networth">Patrimonio neto</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span data-i18n="strip.1">3 idiomas revisados a mano</span><i></i>
+        <span data-i18n="strip.2">32 divisas</span><i></i>
+        <span data-i18n="strip.3">4 widgets de pantalla de inicio</span><i></i>
+        <span data-i18n="strip.4">Hipotecas con amortización real</span><i></i>
+        <span data-i18n="strip.5">0 anuncios</span><i></i>
+        <span data-i18n="strip.6">Copia de seguridad tuya, en JSON</span><i></i>
+        <span data-i18n="strip.1">3 idiomas revisados a mano</span><i></i>
+        <span data-i18n="strip.2">32 divisas</span><i></i>
+        <span data-i18n="strip.3">4 widgets de pantalla de inicio</span><i></i>
+        <span data-i18n="strip.4">Hipotecas con amortización real</span><i></i>
+        <span data-i18n="strip.5">0 anuncios</span><i></i>
+        <span data-i18n="strip.6">Copia de seguridad tuya, en JSON</span><i></i>
       </div>
     </div>
   </section>
+
   <!-- ========================== CÓMO FUNCIONA =========================== -->
-  <section class="section section--alt" id="como-funciona">
+  <section class="section" id="como-funciona">
     <div class="container">
-      <div class="section__head">
-        <p class="eyebrow" data-i18n="how.eyebrow">Sin conectar tu banco</p>
-        <h2 data-i18n="how.title">Automático de verdad, sin darle tus claves a nadie</h2>
-        <p class="body-lg" data-i18n="how.sub">No conectar tu banco no significa apuntarlo todo a mano. SmartFlow hace la parte pesada por ti.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step__number">1</span>
-          <h3 data-i18n="how.step1.title">Añade en segundos</h3>
-          <p data-i18n="how.step1.desc">Por voz, en los 3 idiomas: "Gasté 20 euros en el súper con la BBVA" — y la app rellena fecha, importe, categoría y cuenta sola.</p>
+      <header class="section__head section__head--split">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="how.eyebrow">Sin conectar tu banco</span></p>
+          <h2 data-reveal data-i18n="how.title">Automático de verdad, sin darle tus claves a nadie</h2>
         </div>
-        <div class="step">
-          <span class="step__number">2</span>
-          <h3 data-i18n="how.step2.title">Se repite solo</h3>
-          <p data-i18n="how.step2.desc">Nómina, alquiler, hipoteca, aportaciones a fondos... lo recurrente se propone cada mes en ingresos, ahorro, gastos e inversión. Tú solo confirmas.</p>
-        </div>
-        <div class="step">
-          <span class="step__number">3</span>
-          <h3 data-i18n="how.step3.title">Todo se calcula</h3>
-          <p data-i18n="how.step3.desc">Presupuesto, patrimonio y rentabilidad se actualizan en el momento — sin hojas de cálculo ni recalcular nada a mano.</p>
-        </div>
-      </div>
+        <p class="lede lede--sm" data-reveal data-i18n="how.sub">
+          No conectar el banco no significa apuntarlo todo a mano. La app hace la parte pesada; tú confirmas.
+        </p>
+      </header>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num">01</span>
+          <div>
+            <h3 data-i18n="how.step1.title">Lo dices y ya está</h3>
+            <p data-i18n="how.step1.desc">«El 3 de agosto gasté 20 euros en el súper con la BBVA.» La app rellena fecha, importe, categoría y cuenta sola, en los tres idiomas. También desde el widget, sin abrirla.</p>
+          </div>
+          <div class="step__art step__art--voice" aria-hidden="true">
+            <span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <p data-i18n="how.step1.art">«Gasté 20 € en el súper con la BBVA»</p>
+            <div class="mini-row"><span data-i18n="how.step1.chip1">Alimentación</span><span data-i18n="how.step1.chip2">BBVA Principal</span><span>20,00 €</span></div>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <span class="step__num">02</span>
+          <div>
+            <h3 data-i18n="how.step2.title">Lo que se repite, se repite solo</h3>
+            <p data-i18n="how.step2.desc">Nómina, alquiler, hipoteca, aportaciones a fondos, el IBI de cada inmueble. Se proponen cada mes en ingresos, ahorro, gastos e inversión — en automático o pidiéndote confirmación.</p>
+          </div>
+          <div class="step__art step__art--recurring" aria-hidden="true">
+            <div class="mini-line"><span data-i18n="how.step2.art1">Nómina</span><b>+3.585,07 €</b></div>
+            <div class="mini-line"><span data-i18n="how.step2.art2">Hipoteca Piso Badalona</span><b>−612,44 €</b></div>
+            <div class="mini-line"><span data-i18n="how.step2.art3">Fondo indexado</span><b>−250,00 €</b></div>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <span class="step__num">03</span>
+          <div>
+            <h3 data-i18n="how.step3.title">Todo se recalcula solo</h3>
+            <p data-i18n="how.step3.desc">Presupuesto, patrimonio neto, rentabilidad de cada inmueble y de cada posición. Sin hojas de cálculo y sin volver a sumar nada a mano.</p>
+          </div>
+          <div class="step__art step__art--calc" aria-hidden="true">
+            <div class="bars"><i style="--h:42%"></i><i style="--h:66%"></i><i style="--h:51%"></i><i style="--h:88%"></i><i style="--h:73%"></i><i style="--h:97%"></i></div>
+            <div class="mini-line"><span data-i18n="how.step3.art">Patrimonio neto</span><b>85.135,26 €</b></div>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
-  <!-- ============================ FUNCIONES ============================ -->
-  <section class="section" id="funciones">
+
+  <!-- ============================= FUNCIONES ============================ -->
+  <section class="section section--tinted" id="funciones">
     <div class="container">
-      <div class="section__head">
-        <p class="eyebrow" data-i18n="features.eyebrow">Todo lo que hace SmartFlow</p>
-        <h2 data-i18n="features.title">Una app, todo tu dinero</h2>
-        <p class="body-lg" data-i18n="features.sub">Movimientos, presupuesto, cuentas, inversión, inmuebles y patrimonio — sin cambiar de app.</p>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>
-          <h3 data-i18n="feature.dashboard.title">Dashboard claro</h3>
-          <p data-i18n="feature.dashboard.desc">Resumen del mes, gráfica de tendencia y comparativa por categoría de un vistazo.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l7 4"/></svg></span>
-          <h3 data-i18n="feature.rule.title">Regla 50/30/20</h3>
-          <p data-i18n="feature.rule.desc">Presupuesto configurable con avisos automáticos al 80%, 100% y 120%.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></span>
-          <h3 data-i18n="feature.accounts.title">Multicuentas</h3>
-          <p data-i18n="feature.accounts.desc">Saldo calculado en vivo a partir de tus movimientos reales, nunca un número que se desincroniza.</p>
-        </article>
-        <article class="feature-card feature-card--highlight">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/><rect x="9" y="19" width="6" height="2" rx="1"/></svg></span>
-          <h3 data-i18n="feature.voice.title">Voz avanzada</h3>
-          <p data-i18n="feature.voice.desc">"El 3 de agosto gasté 20 euros en el súper, sácalo de mi cuenta BBVA" — y la app rellena fecha, importe, categoría y cuenta solo. En los 3 idiomas.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
-          <h3 data-i18n="feature.investing.title">Inversión completa</h3>
-          <p data-i18n="feature.investing.desc">Fondos indexados, acciones, cripto, pensiones y renta fija: ventas parciales, dividendos, precio medio y ganancia real.</p>
-        </article>
-        <article class="feature-card feature-card--wide feature-card--highlight">
-          <div class="feature-card__body">
-            <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>
+      <header class="section__head">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="features.eyebrow">Todo tu dinero</span></p>
+        <h2 data-reveal data-i18n="features.title">Una sola app para lo que otras reparten en cinco</h2>
+        <p class="lede lede--sm" data-reveal data-i18n="features.sub">Movimientos, presupuesto, cuentas, inversión, inmuebles y patrimonio. Sin cambiar de pantalla y sin exportar nada.</p>
+      </header>
+
+      <div class="bento">
+        <!-- Inmuebles: la pieza grande, es el diferencial -->
+        <article class="cell cell--feature cell--wide" data-reveal>
+          <div class="cell__body">
+            <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
             <h3 data-i18n="feature.property.title">Inmuebles, tratados como se merecen</h3>
-            <p data-i18n="feature.property.desc">La mayoría de apps de finanzas meten "vivienda" como una categoría de gasto más. SmartFlow lleva cada inmueble como una ficha completa:</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li1">Gastos por categoría en cada inmueble: IBI, comunidad, seguro, mantenimiento...</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li2">Categorías recurrentes que se proponen solas cada mes — tú solo confirmas.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li3">Hipoteca con tabla de amortización real (interés y capital mes a mes), no una estimación genérica.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li4">Calibración contra el recibo real del banco cuando los números no cuadran exactos.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li5">Todo conectado a tu patrimonio neto en tiempo real, sin recalcular nada a mano.</span></li>
+            <p data-i18n="feature.property.desc">La mayoría de apps meten «vivienda» como una categoría de gasto más. Aquí cada inmueble es una ficha completa:</p>
+            <ul class="ticks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li1">Ingresos y gastos mes a mes: IBI, comunidad, seguro, mantenimiento, derrama.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li2">Hipoteca con tabla de amortización real, cambios de tipo y calibración contra el recibo del banco.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li3">Rentabilidad de verdad: Yield on Cost, Cash-on-Cash y ROE, no «se revaloriza un 3%».</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="feature.property.li4">Todo enlazado a tu patrimonio neto en el momento.</span></li>
             </ul>
           </div>
-          <div class="feature-card--wide__media">
-            <img src="assets/screenshots/inmuebles.png" alt="" loading="lazy">
+          <div class="cell__media">
+            <div class="phone phone--sm">
+              <div class="phone__screen">
+                <img src="assets/screenshots/inmuebles.png" loading="lazy" width="320" height="640"
+                     data-i18n-alt="alt.property" alt="Ficha de un inmueble con ingresos, gastos, cashflow e hipoteca">
+              </div>
+            </div>
           </div>
         </article>
-        <article class="feature-card feature-card--highlight">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span>
-          <h3 data-i18n="feature.networth.title">Patrimonio neto que se actualiza solo</h3>
-          <p data-i18n="feature.networth.desc">Cuentas, inversión, inmuebles y deudas, todo sumado en vivo — sin recalcular nada a mano.</p>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9h9"/></svg></span>
+          <h3 data-i18n="feature.rule.title">Presupuesto 50/30/20</h3>
+          <p data-i18n="feature.rule.desc">Configurable, con límites por categoría y por subcategoría, y avisos al 80%, 100% y 120% antes de que te pases.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg></span>
-          <h3 data-i18n="feature.goals.title">Objetivos y ahorro</h3>
-          <p data-i18n="feature.goals.desc">Metas de ahorro y fondo de emergencia, con seguimiento visual del progreso.</p>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4v16h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+          <h3 data-i18n="feature.investing.title">Inversión completa</h3>
+          <p data-i18n="feature.investing.desc">Fondos, acciones, cripto, pensiones y renta fija: ventas parciales, dividendos, precio medio, ganancia realizada y CAGR.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-          <h3 data-i18n="feature.security.title">Seguridad de verdad</h3>
-          <p data-i18n="feature.security.desc">Bloqueo por PIN o biometría, base de datos cifrada en tu móvil, copia de seguridad en JSON.</p>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10.5h18"/><path d="M7 15h3"/></svg></span>
+          <h3 data-i18n="feature.accounts.title">Cuentas con saldo en vivo</h3>
+          <p data-i18n="feature.accounts.desc">El saldo sale de tus movimientos reales, no de un número que escribiste una vez y se quedó desfasado.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <h3 data-i18n="feature.widget.title">Widget de inicio</h3>
-          <p data-i18n="feature.widget.desc">Registra un gasto o un ingreso por voz sin ni siquiera abrir la app.</p>
+
+        <article class="cell cell--accent" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg></span>
+          <h3 data-i18n="feature.voice.title">Entrada por voz con fecha y cuenta</h3>
+          <p data-i18n="feature.voice.desc">No solo el importe: entiende «el martes pasado», «sácalo de la BBVA» y la categoría, hablando normal en los tres idiomas.</p>
+        </article>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+          <h3 data-i18n="feature.excel.title">Importación de Excel</h3>
+          <p data-i18n="feature.excel.desc">Trae el histórico que ya tienes en una hoja. La app aprende cómo categorizas y deja de preguntarte.</p>
+        </article>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
+          <h3 data-i18n="feature.goals.title">Objetivos y fondo de emergencia</h3>
+          <p data-i18n="feature.goals.desc">Con fecha, progreso y enlace a una categoría concreta. El fondo de emergencia se propone solo a partir de tu gasto real.</p>
+        </article>
+
+        <article class="cell cell--networth" data-reveal>
+          <div class="cell__body">
+            <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 15 4-5 4 3 4-6 4 4"/><path d="M3 20h18"/></svg></span>
+            <h3 data-i18n="feature.networth.title">Patrimonio neto que se actualiza solo</h3>
+            <p data-i18n="feature.networth.desc">Cuentas, inversión, inmuebles y deudas sumados en vivo, con histórico y objetivo anual.</p>
+          </div>
+          <div class="nw-graph" aria-hidden="true">
+            <svg viewBox="0 0 320 90" fill="none" preserveAspectRatio="none">
+              <path class="nw-area" d="M0,72 C 40,66 60,58 96,56 S 160,44 200,34 S 268,18 320,10 L320,90 L0,90 Z"/>
+              <path class="nw-line" d="M0,72 C 40,66 60,58 96,56 S 160,44 200,34 S 268,18 320,10"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6.2v5.3c0 4.6 3.3 8.4 8 9.5 4.7-1.1 8-4.9 8-9.5V6.2Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3 data-i18n="feature.security.title">Seguridad que no se cobra aparte</h3>
+          <p data-i18n="feature.security.desc">Bloqueo biométrico o por PIN y base de datos cifrada en el móvil. Están en la versión gratis y ahí se quedan.</p>
+        </article>
+
+        <article class="cell" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span>
+          <h3 data-i18n="feature.widget.title">Cuatro widgets</h3>
+          <p data-i18n="feature.widget.desc">Del grande con el resumen del mes al de un solo toque para apuntar un gasto por voz sin abrir la app. En las tres paletas.</p>
+        </article>
+
+        <article class="cell cell--stories" data-reveal>
+          <span class="cell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14M5 12h14M5 19h9"/><circle cx="19" cy="19" r="2.5"/></svg></span>
+          <h3 data-i18n="feature.stories.title">Historias del mes y del año</h3>
+          <p data-i18n="feature.stories.desc">Tu año en cifras, contado en pantallas que se pasan como una historia. Gratis, porque es lo más compartible que tiene la app.</p>
         </article>
       </div>
     </div>
   </section>
-  <!-- ============================ POR QUÉ ============================== -->
-  <section class="section section--alt" id="por-que">
-    <div class="container">
-      <div class="section__head">
-        <p class="eyebrow" data-i18n="why.eyebrow">Por qué SmartFlow</p>
-        <h2 data-i18n="why.title">Tus datos, tus decisiones</h2>
+
+  <!-- ================================ FLUX ============================== -->
+  <section class="section flux" id="flux">
+    <div class="flux__ambient" aria-hidden="true"><span class="orb orb--3"></span><span class="orb orb--4"></span></div>
+    <div class="container flux__inner">
+      <div class="flux__copy">
+        <p class="eyebrow eyebrow--onDark" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="flux.eyebrow">Pack Premium</span></p>
+        <h2 data-reveal data-i18n="flux.title">Flux conoce tus cifras. Por eso sus respuestas sirven.</h2>
+        <p class="lede lede--onDark" data-reveal data-i18n="flux.sub">
+          Un asistente al que puedes preguntarle por tu dinero de verdad, no por finanzas en general. Sabe cuánto ingresas, qué te cuesta cada inmueble y cuánto llevas ahorrado este mes.
+        </p>
+
+        <ul class="flux__list">
+          <li data-reveal><b data-i18n="flux.f1.t">Previsión del mes que viene</b><span data-i18n="flux.f1.d">Con tus recurrentes y tu histórico: qué va a entrar, qué va a salir y con cuánto te vas a quedar.</span></li>
+          <li data-reveal><b data-i18n="flux.f2.t">Informe fiscal en PDF</b><span data-i18n="flux.f2.d">Inmuebles año a año con amortización y la reducción por alquiler de vivienda, más el resto de inversiones.</span></li>
+          <li data-reveal><b data-i18n="flux.f3.t">Analizador de compra</b><span data-i18n="flux.f3.d">Antes de firmar: qué rentabilidad tendría ese piso con tus números, no con los del anuncio.</span></li>
+          <li data-reveal><b data-i18n="flux.f4.t">Avisos antes de que pase</b><span data-i18n="flux.f4.d">«A este ritmo te pasas de Alimentación el día 22.» El cálculo es gratis; el aviso explicado, Premium.</span></li>
+          <li data-reveal><b data-i18n="flux.f5.t">Tickets y Excel</b><span data-i18n="flux.f5.d">Foto del ticket y ya está apuntado. Y al importar una hoja, las categorías se rellenan solas.</span></li>
+        </ul>
+
+        <p class="flux__note" data-reveal data-i18n="flux.free">
+          ¿Sin suscripción? Cada mes tienes un resumen de tu Historia escrito por Flux con tus cifras reales, gratis. Para que lo veas funcionar antes de decidir.
+        </p>
       </div>
-      <div class="pillar-grid">
-        <div class="pillar">
-          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/><line x1="4" y1="4" x2="20" y2="20"/></svg></span>
-          <h3 data-i18n="why.nobank.title">Sin conectar tu banco</h3>
-          <p data-i18n="why.nobank.desc">SmartFlow nunca te pide las claves de tu banco, el número de tu tarjeta ni acceso a tu bróker de inversión. Apuntas tú lo que quieras, cuando quieras.</p>
+
+      <div class="flux__chat" data-reveal>
+        <div class="chat">
+          <div class="chat__head">
+            <img src="assets/flux_transparent.png" alt="" width="40" height="40" loading="lazy">
+            <div>
+              <strong>Flux</strong>
+              <span data-i18n="flux.chat.status">Con tus datos de septiembre</span>
+            </div>
+          </div>
+          <div class="bubble bubble--me" data-i18n="flux.chat.q">¿Puedo permitirme cambiar de coche este año?</div>
+          <div class="bubble bubble--flux" data-i18n="flux.chat.a">
+            Con tu ritmo actual ahorras 1.500 € al mes y cierras el año en 18.000 €. Si mantienes el fondo de emergencia en 9.400 €, te quedan 8.600 € para la entrada sin tocar la inversión. El margen está en Ocio: llevas tres meses un 26% por encima de tu propio límite.
+          </div>
+          <div class="chat__foot"><span data-i18n="flux.chat.foot">40 consultas al mes · Se renuevan cada mes</span></div>
         </div>
-        <div class="pillar">
-          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-          <h3 data-i18n="why.local.title">100% local</h3>
-          <p data-i18n="why.local.desc">Lo que apuntas se guarda en el almacenamiento de tu propio móvil. No hay servidor donde vivan tus datos financieros — ni los vemos, ni los podemos vender aunque quisiéramos.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg></span>
-          <h3 data-i18n="why.noads.title">Sin anuncios, sin venta de datos</h3>
-          <p data-i18n="why.noads.desc">No hay publicidad ni terceros analizando tus finanzas. El modelo de negocio es una app que pagas por usar, no una que te vende a ti.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></span>
-          <h3 data-i18n="why.trilingual.title">Trilingüe de verdad</h3>
-          <p data-i18n="why.trilingual.desc">Español, catalán e inglés revisados frase a frase — casi mil claves de texto, no traducción automática.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
-          <h3 data-i18n="why.free.title">Gratis en el lanzamiento</h3>
-          <p data-i18n="why.free.desc">Todo lo de arriba, sin coste. El Pack Premium llegará más adelante como algo extra, no como un candado a lo que ya tienes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ============================ CAPTURAS ============================== -->
-  <section class="section" id="capturas">
-    <div class="container">
-      <div class="section__head">
-        <p class="eyebrow" data-i18n="screens.eyebrow">Así se ve por dentro</p>
-        <h2 data-i18n="screens.title">Diseñada para mirarla cada día</h2>
-      </div>
-    </div>
-    <div class="container">
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="assets/screenshots/dashboard.png" alt="" loading="lazy">
-          <span data-i18n="screens.dashboard">Dashboard</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/gastos_donut.png" alt="" loading="lazy">
-          <span data-i18n="screens.expenses">Gastos por categoría</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/comparativa_categoria.png" alt="" loading="lazy">
-          <span data-i18n="screens.comparison">Comparativa mensual</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/patrimonio_neto.png" alt="" loading="lazy">
-          <span data-i18n="screens.networth">Patrimonio neto</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/inversion_fondos.png" alt="" loading="lazy">
-          <span data-i18n="screens.investing">Fondos y acciones</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/inmuebles.png" alt="" loading="lazy">
-          <span data-i18n="screens.property">Inmuebles</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/ahorro.png" alt="" loading="lazy">
-          <span data-i18n="screens.savings">Ahorro</span>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/screenshots/perfil.png" alt="" loading="lazy">
-          <span data-i18n="screens.profile">Perfil</span>
-        </figure>
+        <img class="flux__mascot" src="assets/flux_transparent.png" alt="" width="180" height="180" loading="lazy">
       </div>
     </div>
   </section>
-  <!-- ============================= PREMIUM =============================== -->
-  <section class="section" id="premium">
+
+  <!-- ============================== PRECIOS ============================= -->
+  <section class="section" id="precios">
     <div class="container">
-      <div class="premium">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="pricing.eyebrow">Gratis y Premium</span></p>
+        <h2 data-reveal data-i18n="pricing.title">La versión gratis no es una versión recortada</h2>
+        <p class="lede lede--sm" data-reveal data-i18n="pricing.sub">Nunca hemos quitado una función de la capa gratuita. Lo que se paga es Flux, el informe fiscal, la previsión completa y la cantidad a partir de cierto punto.</p>
+      </header>
+
+      <div class="plans">
+        <article class="plan" data-reveal>
+          <header class="plan__head">
+            <h3 data-i18n="plan.free.name">Gratis</h3>
+            <p class="plan__price"><span class="plan__amount" data-i18n="plan.free.price">0 €</span></p>
+            <p class="plan__tag" data-i18n="plan.free.tag">Para siempre, sin cuenta ni registro</p>
+          </header>
+          <ul class="plan__list">
+            <li data-i18n="plan.free.1">Movimientos, categorías, traspasos y entrada por voz</li>
+            <li data-i18n="plan.free.2">Presupuesto 50/30/20 con avisos</li>
+            <li data-i18n="plan.free.3">Recurrentes en ingresos, gastos, ahorro e inversión</li>
+            <li data-i18n="plan.free.4">Objetivos, fondo de emergencia e Historias</li>
+            <li data-i18n="plan.free.5">Inmuebles con hipoteca real y métricas de rentabilidad</li>
+            <li data-i18n="plan.free.6">Cifrado, biometría, copia de seguridad y exportación</li>
+            <li data-i18n="plan.free.7">Los 4 widgets, 3 paletas, 3 idiomas y 32 divisas</li>
+            <li class="plan__limit" data-i18n="plan.free.8">Hasta 2 inmuebles, 3 posiciones y 2 cuentas activas</li>
+            <li class="plan__limit" data-i18n="plan.free.9">1 resumen mensual escrito por Flux al mes</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" data-store-link href="https://play.google.com/store/apps/details?id=com.manel.smartflow">
+            <span data-store-label data-i18n="hero.cta">Descargar en Google Play</span>
+          </a>
+        </article>
+
+        <article class="plan plan--featured" data-reveal>
+          <span class="plan__ribbon" data-i18n="plan.premium.ribbon">15 días de prueba</span>
+          <header class="plan__head">
+            <h3 data-i18n="plan.premium.name">Pack Premium</h3>
+            <p class="plan__price">
+              <span class="plan__amount" data-i18n="plan.premium.amount">4,99 €</span>
+              <span class="plan__per" data-i18n="plan.premium.per">/mes</span>
+            </p>
+            <p class="plan__tag" data-i18n="plan.premium.tag">O 39,99 € al año — dos meses menos</p>
+          </header>
+          <ul class="plan__list">
+            <li data-i18n="plan.premium.0">Todo lo de la versión gratis, sin límites de cantidad</li>
+            <li data-i18n="plan.premium.1">Chat con Flux, con memoria de la conversación</li>
+            <li data-i18n="plan.premium.2">Previsión mensual completa</li>
+            <li data-i18n="plan.premium.3">Informe fiscal en PDF, año a año</li>
+            <li data-i18n="plan.premium.4">Analizador de inmueble antes de comprar</li>
+            <li data-i18n="plan.premium.5">Simulador «qué pasaría si» y objetivos del año que viene</li>
+            <li data-i18n="plan.premium.6">Resumen mensual y anual redactados por Flux</li>
+            <li data-i18n="plan.premium.7">Escaneo de tickets y categorización automática del Excel</li>
+            <li data-i18n="plan.premium.8">Avatar caricaturizado</li>
+            <li class="plan__limit" data-i18n="plan.premium.9">40 consultas de IA al mes</li>
+          </ul>
+          <a class="btn btn--primary btn--block" data-store-link href="https://play.google.com/store/apps/details?id=com.manel.smartflow">
+            <span data-store-label data-i18n="plan.premium.cta">Probar 15 días</span>
+          </a>
+        </article>
+      </div>
+
+      <p class="plans__note" data-reveal data-i18n="pricing.note">
+        La prueba de 15 días está en el plan mensual y se cancela desde Google Play cuando quieras. Si dejas Premium, no se borra nada: lo que ya tenías sigue ahí y se puede seguir editando.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================== CAPTURAS ============================ -->
+  <section class="section section--tinted" id="capturas">
+    <div class="container">
+      <header class="section__head section__head--split">
         <div>
-          <span class="premium__badge" data-i18n="premium.badge">Próximamente</span>
-          <h2 data-i18n="premium.title">Un Pack Premium está en camino</h2>
-          <p data-i18n="premium.desc">Un asistente con IA que conoce tus números para ayudarte a decidir mejor, además de otras funciones para ahorrarte trabajo. Todavía sin fecha — y la versión gratuita seguirá siendo gratis.</p>
+          <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="screens.eyebrow">Así se ve por dentro</span></p>
+          <h2 data-reveal data-i18n="screens.title">Diseñada para mirarla cada día</h2>
         </div>
-        <img class="premium__mascot" src="assets/flux_transparent.png" alt="Flux, la futura mascota de SmartFlow" loading="lazy">
+        <p class="lede lede--sm" data-reveal data-i18n="screens.sub">Tres paletas, claro y oscuro, y los números en tipografía tabular para que las columnas cuadren de verdad.</p>
+      </header>
+    </div>
+
+    <div class="rail" data-rail>
+      <div class="rail__track">
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/dashboard.png" loading="lazy" data-i18n-alt="alt.dashboard" alt="Pantalla principal"></div></div>
+          <figcaption data-i18n="screens.dashboard">Dashboard</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/gastos_donut.png" loading="lazy" data-i18n-alt="alt.expenses" alt="Gastos por categoría"></div></div>
+          <figcaption data-i18n="screens.expenses">Gastos por categoría</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/comparativa_categoria.png" loading="lazy" data-i18n-alt="alt.comparison" alt="Comparativa mensual"></div></div>
+          <figcaption data-i18n="screens.comparison">Comparativa mensual</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/patrimonio_neto.png" loading="lazy" data-i18n-alt="alt.networth" alt="Patrimonio neto"></div></div>
+          <figcaption data-i18n="screens.networth">Patrimonio neto</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/inversion_fondos.png" loading="lazy" data-i18n-alt="alt.investing" alt="Fondos y acciones"></div></div>
+          <figcaption data-i18n="screens.investing">Fondos y acciones</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/inmuebles.png" loading="lazy" data-i18n-alt="alt.property" alt="Inmuebles"></div></div>
+          <figcaption data-i18n="screens.property">Inmuebles</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/ahorro.png" loading="lazy" data-i18n-alt="alt.savings" alt="Ahorro"></div></div>
+          <figcaption data-i18n="screens.savings">Ahorro</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone phone--sm"><div class="phone__screen"><img src="assets/screenshots/perfil.png" loading="lazy" data-i18n-alt="alt.profile" alt="Perfil y ajustes"></div></div>
+          <figcaption data-i18n="screens.profile">Perfil</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="container rail__controls">
+      <button type="button" class="icon-btn" data-rail-prev data-i18n-aria="a11y.prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+      </button>
+      <button type="button" class="icon-btn" data-rail-next data-i18n-aria="a11y.next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================= PRIVACIDAD =========================== -->
+  <section class="section" id="privacidad">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="why.eyebrow">Tus datos</span></p>
+        <h2 data-reveal data-i18n="why.title">Local por defecto, y te decimos exactamente qué sale</h2>
+        <p class="lede lede--sm" data-reveal data-i18n="why.sub">Tus movimientos, cuentas, inmuebles e inversiones viven en la base de datos cifrada de tu móvil. No hay servidor donde estén guardados.</p>
+      </header>
+
+      <div class="pillars">
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="10" width="18" height="11" rx="2.5"/><path d="M7.5 10V7a4.5 4.5 0 0 1 9 0v3"/><path d="m3.5 3.5 17 17"/></svg></span>
+          <h3 data-i18n="why.nobank.title">Nunca te pedimos las claves del banco</h3>
+          <p data-i18n="why.nobank.desc">Ni las de tu banco, ni el número de tu tarjeta, ni acceso a tu bróker. La sincronización bancaria está descartada, no aparcada: sería incompatible con todo lo demás.</p>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="3"/><path d="M10 18.5h4"/><path d="m9.5 10 1.8 1.8L15 8"/></svg></span>
+          <h3 data-i18n="why.local.title">Todo se guarda en tu móvil</h3>
+          <p data-i18n="why.local.desc">Base de datos cifrada en el dispositivo y copia de seguridad en JSON que generas y guardas tú, donde tú quieras. Si desinstalas la app, desaparece — no queda copia en ningún sitio nuestro.</p>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6.2v5.3c0 4.6 3.3 8.4 8 9.5 4.7-1.1 8-4.9 8-9.5V6.2Z"/><path d="M12 9v4"/><path d="M12 16h.01"/></svg></span>
+          <h3 data-i18n="why.ai.title">Y cuando usas Flux, te lo decimos</h3>
+          <p data-i18n="why.ai.desc">Las funciones con IA sí envían cifras a un proveedor para poder responder. Solo cuando las usas, solo lo necesario, y está detallado sin rodeos en la política de privacidad — incluido lo que se envía de más.</p>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span>
+          <h3 data-i18n="why.noads.title">Sin anuncios y sin vender nada</h3>
+          <p data-i18n="why.noads.desc">No hay publicidad ni terceros analizando tus finanzas. El modelo es una app que se paga por usar, no una que te vende a ti.</p>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg></span>
+          <h3 data-i18n="why.trilingual.title">Trilingüe de verdad</h3>
+          <p data-i18n="why.trilingual.desc">Español, catalán e inglés revisados frase a frase — cerca de mil quinientas claves de texto, no traducción automática. La voz también entiende los tres.</p>
+        </div>
+        <div class="pillar" data-reveal>
+          <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7 9.5 17.5 4 12"/></svg></span>
+          <h3 data-i18n="why.keep.title">Lo que ya has metido no se toca</h3>
+          <p data-i18n="why.keep.desc">Los límites del plan gratis solo aparecen al añadir algo nuevo. Si ya tenías cinco inmuebles, los cinco siguen visibles y editables. Y cobrar por el cifrado o la copia de seguridad no va a pasar nunca.</p>
+        </div>
+      </div>
+
+      <p class="privacy-link" data-reveal>
+        <a href="privacidad.html" data-i18n="why.readpolicy">Leer la política de privacidad completa →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================ FAQ =============================== -->
+  <section class="section section--tinted" id="faq">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="faq.eyebrow">Dudas razonables</span></p>
+        <h2 data-reveal data-i18n="faq.title">Lo que preguntaría yo</h2>
+      </header>
+
+      <div class="faq">
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q1">Si no conecta con el banco, ¿no acabaré apuntándolo todo a mano?</h3>
+          <p data-i18n="faq.a1">No. Lo recurrente se propone cada mes solo, el histórico entra por Excel, lo del día a día se dice hablando o se hace foto del ticket, y el widget apunta un gasto sin abrir la app. Lo que queda a mano es confirmar.</p>
+        </div>
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q2">¿Qué pasa si dejo de pagar Premium?</h3>
+          <p data-i18n="faq.a2">No se borra nada. Todo lo que hayas metido sigue visible y editable, incluso por encima de los límites del plan gratis. Lo que se cierra son las funciones de Flux, el informe fiscal y la previsión completa.</p>
+        </div>
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q3">¿Hay que crear una cuenta?</h3>
+          <p data-i18n="faq.a3">No. No hay registro, ni correo, ni contraseña. Para el Pack Premium se usa un identificador anónimo que puedes ver y copiar desde los ajustes de la app.</p>
+        </div>
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q4">¿Y si cambio de móvil?</h3>
+          <p data-i18n="faq.a4">Exportas la copia de seguridad en JSON desde el móvil viejo y la restauras en el nuevo. El fichero es tuyo: lo guardas donde quieras y nosotros no tenemos acceso a él.</p>
+        </div>
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q5">¿Está en iPhone?</h3>
+          <p data-i18n="faq.a5">Todavía no. SmartFlow es una app de Android, y lo será durante un tiempo.</p>
+        </div>
+        <div class="qa" data-reveal>
+          <h3 data-i18n="faq.q6">¿Quién hay detrás?</h3>
+          <p data-i18n="faq.a6">Una persona. SmartFlow es parte de la saga SmartBalance y se desarrolla de forma independiente, sin inversores que quieran rentabilizar tus datos.</p>
+        </div>
       </div>
     </div>
   </section>
-  <!-- ============================== FOOTER ================================ -->
+
+  <!-- =============================== CIERRE ============================= -->
+  <section class="closer">
+    <div class="container closer__inner">
+      <h2 data-reveal data-i18n="closer.title">Empieza gratis. Sin cuenta, sin tarjeta, sin dar las claves de nada.</h2>
+      <div class="hero__actions hero__actions--center" data-reveal>
+        <a class="btn btn--primary" data-store-link href="https://play.google.com/store/apps/details?id=com.manel.smartflow">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5V3.5c0-.4.2-.8.6-1L13 12l-9.4 9.5c-.4-.2-.6-.6-.6-1zM16.8 15.3 6 21.6l8.4-8.4 2.4 2.1zM20.2 10.6c.5.3.8.8.8 1.4s-.3 1.1-.8 1.4l-2.5 1.4-2.7-2.8 2.7-2.8 2.5 1.4zM6 2.4l10.8 6.3-2.4 2.1L6 2.4z"/></svg>
+          <span data-store-label data-i18n="hero.cta">Descargar en Google Play</span>
+        </a>
+      </div>
+      <p class="closer__note" data-reveal data-i18n="closer.note">Android 8 o superior</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- =============================== FOOTER ============================= -->
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <div>
-        <a href="#top" class="footer-brand">
-          <img src="assets/icon.png" alt="">
-          SmartFlow
+      <div class="site-footer__brand">
+        <a href="#top" class="brand brand--footer">
+          <img src="assets/icon.png" alt="" width="28" height="28">
+          <span>SmartFlow</span>
         </a>
-        <p class="footer-tagline" data-i18n="footer.tagline">Parte de la saga SmartBalance</p>
+        <p data-i18n="footer.tagline">Parte de la saga SmartBalance</p>
       </div>
       <nav class="footer-links" aria-label="Enlaces">
         <a href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
         <a href="terminos.html" data-i18n="footer.terms">Términos de uso</a>
-        <a href="mailto:smartbalanceapp@gmail.com" data-i18n="nav.contact">Contacto</a>
+        <a href="privacidad.html#eliminacion-datos" data-i18n="footer.delete">Eliminar tus datos</a>
+        <a href="mailto:smartbalanceapp@gmail.com" data-i18n="footer.contact">Contacto</a>
       </nav>
       <p class="footer-copy">© 2026 SmartFlow — SmartBalance</p>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
