@@ -1,164 +1,412 @@
-SmartFlow
-Política de Privacidad
-Última actualización: 25 de septiembre de 2026
-
-Esta Política de Privacidad describe cómo SmartFlow ("la aplicación", "nosotros") trata los datos cuando usas la aplicación. SmartFlow está desarrollada por un desarrollador independiente (SmartBalance) y su principio de diseño es que tus datos financieros permanezcan en tu dispositivo siempre que sea posible.
-
-1. Resumen — lo esencial
-
-Tus movimientos, presupuesto, patrimonio, ahorro e inversiones se guardan únicamente en tu teléfono, en una base de datos cifrada. SmartFlow no se conecta a tu banco y no tiene ningún servidor donde se almacenen tus finanzas.
-
-Hay tres casos, y solo tres, en los que algo sale de tu dispositivo:
-
-- Las funciones de inteligencia artificial, que envían datos financieros a nuestro servidor y de ahí a un proveedor de IA. Se detallan en la sección 4.
-- La consulta de cotizaciones de fondos, acciones y criptomonedas (sección 6).
-- Los datos de uso y los informes de fallos (sección 8).
-
-Todo lo demás se queda en el teléfono.
-
-2. Datos que se quedan siempre en tu dispositivo
-
-La siguiente información se almacena en local y nunca se envía a ningún servidor salvo que tú mismo elijas exportarla o compartirla:
-
-- Movimientos (ingresos, gastos, ahorro), categorías y subcategorías
-- Presupuestos y objetivos de ahorro
-- Cuentas, activos y pasivos, y el cálculo de tu patrimonio neto
-- Inversiones: inmuebles, fondos/acciones, hipotecas y su amortización
-- Datos fiscales de tus inmuebles: referencia catastral, valores de adquisición y suelo, y los contratos de alquiler con el nombre y el NIF de cada inquilino
-- Preferencias de la aplicación (idioma, moneda, paleta de colores, etc.)
-
-Tres detalles técnicos que conviene que sepas:
-
-La base de datos está cifrada con una clave aleatoria que se genera en tu propio teléfono y se guarda en el almacén seguro del sistema (Android Keystore). Esa clave nunca sale del dispositivo y nosotros no la tenemos.
-
-La aplicación tiene desactivada la copia de seguridad automática de Android. Eso significa que tu base de datos no se sube a Google Drive ni a ninguna copia del sistema. La contrapartida es que, si cambias de móvil o reinstalas, tienes que hacer tú la copia desde Ajustes.
-
-Puedes exportar una copia completa de tus datos cuando quieras (Ajustes → Crear copia de seguridad) y decidir tú dónde guardarla o con quién compartirla. SmartFlow no la sube a ningún sitio de forma automática.
-
-3. El informe fiscal en PDF
-
-El informe fiscal para tu asesor o gestoría se genera entero dentro de tu teléfono. El PDF incluye la referencia catastral de cada inmueble, su dirección, y el nombre y el NIF de cada inquilino, porque es lo que un gestor necesita. Ese documento no pasa por ningún servidor: se crea en el móvil y eres tú quien decide a quién enviarlo.
-
-Si además pides que la inteligencia artificial redacte los comentarios del informe, se envían fuera las cifras del inmueble, pero no su nombre, ni su dirección, ni su referencia catastral, ni el nombre o el NIF de ningún inquilino. Se detalla en la sección 4.
-
-4. Funciones de inteligencia artificial
-
-Estas funciones son la única parte de SmartFlow que envía datos financieros fuera de tu dispositivo, y solo se activan cuando tú las usas.
-
-Cómo funciona el circuito
-
-Los datos van desde tu móvil a una función alojada en Firebase (Google Cloud, región europea, europe-west1), que es nuestra, y desde ahí al proveedor de inteligencia artificial correspondiente. Se hace así para que la clave de acceso al proveedor no viaje dentro de la aplicación, donde cualquiera podría extraerla.
-
-Qué se envía en cada función
-
-Asistente Flux, análisis mensual, resumen anual, previsión mensual, propuesta de objetivos, simulador y categorización de importaciones: se envían agregados de tus finanzas (totales por categoría y subcategoría, evolución de los últimos meses, patrimonio neto, saldo por tipo de cuenta, presupuestos, deudas y objetivos) y tus movimientos más recientes.
-
-Sobre los movimientos recientes, conviene ser explícito: se envía el título que tú escribes en cada movimiento. Es lo que permite que Flux te hable de "lo que gastas en el supermercado" en lugar de hablar solo de categorías abstractas. Si escribes un título con información que prefieres no compartir, ten en cuenta que ese texto sale del dispositivo cuando usas estas funciones. También se envían el título de tus objetivos de ahorro y el nombre que le hayas dado a cada deuda.
-
-Lo que no se envía nunca en estas funciones: tu nombre, tu correo electrónico, el nombre o alias que le hayas puesto a cada cuenta, los números de cuenta, y el campo de notas de los movimientos.
-
-Informe fiscal: se envían las cifras ya calculadas de cada inmueble (ingresos, intereses, gastos, amortización, resultado, días alquilado y vacío) y un recuento de cuántos contratos hay y en cuántos falta el NIF. No se envía el nombre del inmueble, ni su dirección, ni su referencia catastral, ni el nombre o el NIF de ningún inquilino.
-
-Escaneo de tickets: se envía la fotografía del ticket que tú hagas, para extraer de ella el importe, el comercio y la fecha.
-
-Avatar con inteligencia artificial: se envía la fotografía que tú elijas, para generar la caricatura.
-
-Quién procesa cada cosa
-
-Anthropic (Claude) procesa el texto de todas las funciones anteriores y la fotografía del escaneo de tickets.
-
-Google (Gemini) procesa únicamente la fotografía del avatar.
-
-Ambos actúan como encargados del tratamiento y tratan esos datos conforme a sus propios términos de uso y políticas de privacidad, que puedes consultar en sus sitios web.
-
-Qué guardamos nosotros
-
-Nada del contenido. Ni tus cifras, ni los títulos de tus movimientos, ni las fotografías. Nuestra función recibe los datos, los reenvía al proveedor, te devuelve la respuesta y no conserva ninguna de las dos cosas.
-
-Los registros técnicos de la función guardan únicamente datos de funcionamiento: qué tipo de consulta se hizo, qué modelo se usó, cuántas palabras ocupó la respuesta y si se completó correctamente. Nunca el contenido de la consulta ni de la respuesta.
-
-Sí se guarda, asociado a tu identificador anónimo, si tu suscripción está activa y cuántas consultas has hecho este mes, para poder aplicar los límites de uso.
-
-Quién puede usar estas funciones
-
-Casi todas requieren la suscripción Premium. Hay una excepción: el análisis mensual se puede usar una vez al mes sin suscripción, para que puedas probar la función antes de decidir. Si la usas, se envían los mismos datos descritos arriba.
-
-5. Datos de otras personas que tú introduces
-
-Si registras contratos de alquiler, estarás guardando el nombre y el NIF de tus inquilinos, que son datos personales de otra persona. Se guardan cifrados en tu teléfono y, desde la versión 1.1.0, no salen de él en ningún caso: ni a nuestro servidor ni a ningún proveedor de inteligencia artificial.
-
-Aun así, eres tú quien decide introducirlos y quien comparte el PDF del informe, de modo que la responsabilidad sobre esos datos frente a esas personas es tuya. Te recomendamos introducir solo lo que de verdad necesites para tu declaración.
-
-6. Cotizaciones de mercado (fondos, acciones, criptomonedas)
-
-Si consultas el precio de un fondo, una acción o una criptomoneda, SmartFlow contacta directamente desde tu dispositivo con Alpha Vantage y CoinGecko para obtener la cotización. Se envía únicamente el identificador del activo que consultas, nunca cuánto tienes ni ningún otro dato tuyo.
-
-Para Alpha Vantage necesitas introducir tu propia clave de API, que se guarda solo en tu dispositivo. Estas consultas se rigen también por las políticas de privacidad de Alpha Vantage y CoinGecko.
-
-7. Suscripción y pagos
-
-La compra y la gestión de la suscripción Premium las procesan RevenueCat y Google Play, que reciben la información necesaria para validar tu suscripción. SmartFlow no ve ni almacena en ningún momento tus datos de pago: ni el número de tarjeta, ni la cuenta bancaria, ni nada parecido. Eso lo gestiona directamente Google Play.
-
-Cuando tu suscripción cambia de estado, RevenueCat nos avisa y nosotros guardamos únicamente si está activa o no, asociado a tu identificador anónimo.
-
-Puedes gestionar o cancelar tu suscripción en cualquier momento desde Ajustes → Suscripción → Gestionar suscripción, que te lleva a la página de Google Play.
-
-8. Datos de uso e informes de fallos
-
-Analítica de uso (Firebase Analytics). Registra qué pantallas se visitan y con qué frecuencia, para saber qué partes de la aplicación se usan de verdad. Son datos de navegación: qué pantalla se abre y cuándo. Nunca importes, categorías, títulos de movimientos ni ningún otro dato financiero.
-
-Informes de fallos (Firebase Crashlytics). Cuando la aplicación falla, se envía un informe técnico con el modelo de teléfono, la versión de Android, la versión de la aplicación y el detalle del error. Sirve para poder arreglarlo. No incluye tus datos financieros.
-
-Verificación de la aplicación (Firebase App Check y Play Integrity). Comprueban que las peticiones vienen de la aplicación real instalada desde Google Play, y no de un programa que se hace pasar por ella. Es una medida contra el abuso del servicio.
-
-Identificación anónima (Firebase Authentication). Cada instalación recibe un identificador anónimo generado automáticamente. No está asociado a tu nombre, tu correo ni ningún dato personal, y sirve para aplicar los límites de uso y saber si tu suscripción está activa. Si desinstalas y vuelves a instalar la aplicación, se genera uno nuevo.
-
-9. Entrada por voz
-
-Si registras movimientos por voz, el audio lo procesa el reconocimiento de voz del propio sistema Android de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe el texto ya transcrito. Ten en cuenta que, según la configuración de tu teléfono, ese reconocimiento puede realizarlo Google en sus servidores, conforme a la política de privacidad de Google.
-
-10. Transferencias internacionales
-
-Nuestro servidor está en la Unión Europea (Google Cloud, región europe-west1). Los proveedores de inteligencia artificial descritos en la sección 4 pueden procesar los datos fuera del Espacio Económico Europeo, principalmente en Estados Unidos, amparados en las garantías previstas por el Reglamento General de Protección de Datos, como las cláusulas contractuales tipo.
-
-11. Cuánto tiempo se conservan los datos
-
-Los datos que están en tu teléfono se conservan mientras tú quieras, y desaparecen al borrarlos desde la aplicación o al desinstalarla.
-
-Lo que guardamos nosotros —el estado de tu suscripción y tus contadores de uso, asociados al identificador anónimo— se conserva mientras uses la aplicación, y se elimina si nos lo pides.
-
-Los datos de analítica y de fallos se conservan conforme a los plazos de Firebase, que hoy son de catorce meses para la analítica.
-
-12. Lo que SmartFlow no hace
-
-- No se conecta a tu banco ni accede a tus cuentas bancarias reales
-- No vende tus datos a terceros ni los usa con fines publicitarios
-- No muestra anuncios
-- No usa tus datos para entrenar modelos de inteligencia artificial
-- No guarda en ningún servidor tus movimientos, tus cifras ni tus fotografías
-
-13. Tus derechos
-
-La mayor parte de tus datos nunca sale de tu dispositivo, así que tienes control directo sobre ellos: puedes consultarlos, editarlos, exportarlos (Ajustes → Crear copia de seguridad) o borrarlos por completo (Ajustes → Borrar todos los datos) en cualquier momento, sin pedirnos permiso.
-
-Sobre los datos que sí tratamos nosotros —el estado de tu suscripción, tus contadores de uso y los datos de analítica y fallos— tienes los derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad que reconoce el Reglamento General de Protección de Datos.
-
-Cómo pedir la eliminación de tus datos
-
-Escríbenos a smartbalanceapp@gmail.com indicando que quieres eliminar tus datos. Para poder identificarlos necesitaremos tu identificador anónimo, que encontrarás en Ajustes. Eliminaremos tu documento de usuario y tus contadores de uso en un plazo máximo de treinta días, y te lo confirmaremos.
-
-Ten en cuenta que eliminar esos datos no cancela tu suscripción: eso se hace desde Google Play. Y no afecta a los datos de tu teléfono, que borras tú desde la propia aplicación.
-
-14. Menores de edad
-
-SmartFlow no está dirigida a menores de edad y no recopila conscientemente datos de menores. Si crees que un menor nos ha proporcionado datos personales, contáctanos y los eliminaremos.
-
-15. Cambios en esta política
-
-Podemos actualizar esta política si cambia cómo funciona la aplicación. Publicaremos cualquier cambio en esta misma página, con la fecha de actualización arriba. Si el cambio afecta de forma significativa a los datos que salen de tu dispositivo, te avisaremos dentro de la aplicación.
-
-¿Alguna pregunta sobre tu privacidad?
-
-smartbalanceapp@gmail.com
-
-SmartFlow — parte de la saga SmartBalance
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — SmartFlow</title>
+<style>
+  :root {
+    --ink: #0B1B14;
+    --muted: #5b6b63;
+    --primary: #10B981;
+    --bg: #F0FDF9;
+    --card: #ffffff;
+    --border: #DCEFE8;
+    --warn: #B45309;
+    --warnbg: rgba(245, 158, 11, 0.1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+  .badge {
+    display: inline-block; background: rgba(16, 185, 129, 0.12); color: var(--primary);
+    font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+  }
+  h1 { font-size: 28px; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .updated { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 40px 0 12px; padding-top: 8px; }
+  h3 { font-size: 15px; font-weight: 700; margin: 24px 0 8px; color: var(--ink); }
+  p, li { font-size: 15px; color: #223028; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; margin: 16px 0;
+  }
+  .card-title { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 6px; }
+  .warn {
+    background: var(--warnbg); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 14px;
+    padding: 18px 20px; margin: 16px 0;
+  }
+  .warn-title { font-weight: 700; font-size: 14px; color: var(--warn); margin-bottom: 6px; }
+  .contact {
+    background: rgba(16, 185, 129, 0.08); border-radius: 14px; padding: 20px;
+    margin-top: 40px; text-align: center;
+  }
+  a { color: var(--primary); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 12px; text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">SmartFlow</span>
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: 25 de septiembre de 2026</p>
+
+  <p>
+    Esta Política de Privacidad describe cómo <strong>SmartFlow</strong> ("la aplicación",
+    "nosotros") trata los datos cuando usas la aplicación. SmartFlow está desarrollada por un
+    desarrollador independiente (SmartBalance) y su principio de diseño es que tus datos
+    financieros permanezcan en tu dispositivo siempre que sea posible.
+  </p>
+
+  <h2>1. Resumen — lo esencial</h2>
+  <p>
+    Tus movimientos, presupuesto, patrimonio, ahorro e inversiones se guardan únicamente en tu
+    teléfono, en una base de datos cifrada. SmartFlow no se conecta a tu banco y no tiene ningún
+    servidor donde se almacenen tus finanzas.
+  </p>
+  <div class="card">
+    <div class="card-title">Solo hay tres casos en los que algo sale de tu dispositivo</div>
+    <ul style="margin:0;">
+      <li>Las funciones de inteligencia artificial, que envían datos financieros a nuestro
+      servidor y de ahí a un proveedor de IA (sección 4).</li>
+      <li>La consulta de cotizaciones de fondos, acciones y criptomonedas (sección 6).</li>
+      <li>Los datos de uso y los informes de fallos (sección 8).</li>
+    </ul>
+  </div>
+  <p>Todo lo demás se queda en el teléfono.</p>
+
+  <h2>2. Datos que se quedan siempre en tu dispositivo</h2>
+  <p>
+    La siguiente información se almacena en local y nunca se envía a ningún servidor salvo que
+    tú mismo elijas exportarla o compartirla:
+  </p>
+  <ul>
+    <li>Movimientos (ingresos, gastos, ahorro), categorías y subcategorías</li>
+    <li>Presupuestos y objetivos de ahorro</li>
+    <li>Cuentas, activos y pasivos, y el cálculo de tu patrimonio neto</li>
+    <li>Inversiones: inmuebles, fondos y acciones, hipotecas y su amortización</li>
+    <li>Datos fiscales de tus inmuebles: referencia catastral, valores de adquisición y suelo, y
+    los contratos de alquiler con el nombre y el NIF de cada inquilino</li>
+    <li>Preferencias de la aplicación (idioma, moneda, paleta de colores...)</li>
+  </ul>
+
+  <div class="card">
+    <div class="card-title">Cifrado</div>
+    <p style="margin:0;">
+      La base de datos está cifrada con una clave aleatoria que se genera en tu propio teléfono y
+      se guarda en el almacén seguro del sistema (Android Keystore). Esa clave nunca sale del
+      dispositivo y nosotros no la tenemos.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Copia de seguridad automática desactivada</div>
+    <p style="margin:0;">
+      La aplicación tiene desactivada la copia de seguridad automática de Android, así que tu base
+      de datos no se sube a Google Drive ni a ninguna copia del sistema. La contrapartida es que,
+      si cambias de móvil o reinstalas, tienes que hacer tú la copia desde Ajustes.
+    </p>
+  </div>
+
+  <p>
+    Puedes exportar una copia completa de tus datos cuando quieras (Ajustes → Crear copia de
+    seguridad) y decidir tú dónde guardarla o con quién compartirla. SmartFlow no la sube a ningún
+    sitio de forma automática.
+  </p>
+
+  <h2>3. El informe fiscal en PDF</h2>
+  <p>
+    El informe fiscal para tu asesor o gestoría <strong>se genera entero dentro de tu
+    teléfono</strong>. El PDF incluye la referencia catastral de cada inmueble, su dirección, y el
+    nombre y el NIF de cada inquilino, porque es lo que un gestor necesita. Ese documento no pasa
+    por ningún servidor: se crea en el móvil y eres tú quien decide a quién enviarlo.
+  </p>
+  <p>
+    Si además pides que la inteligencia artificial redacte los comentarios del informe, se envían
+    fuera las cifras del inmueble, pero <strong>no</strong> su nombre, ni su dirección, ni su
+    referencia catastral, ni el nombre o el NIF de ningún inquilino.
+  </p>
+
+  <h2>4. Funciones de inteligencia artificial</h2>
+  <p>
+    Estas funciones son la única parte de SmartFlow que envía datos financieros fuera de tu
+    dispositivo, y solo se activan cuando tú las usas.
+  </p>
+
+  <h3>Cómo funciona el circuito</h3>
+  <p>
+    Los datos van desde tu móvil a una función alojada en Firebase (Google Cloud, región europea,
+    europe-west1), que es nuestra, y desde ahí al proveedor de inteligencia artificial
+    correspondiente. Se hace así para que la clave de acceso al proveedor no viaje dentro de la
+    aplicación, donde cualquiera podría extraerla.
+  </p>
+
+  <h3>Qué se envía en cada función</h3>
+  <p>
+    <strong>Asistente Flux, análisis mensual, resumen anual, previsión mensual, propuesta de
+    objetivos, simulador y categorización de importaciones.</strong> Se envían agregados de tus
+    finanzas (totales por categoría y subcategoría, evolución de los últimos meses, patrimonio
+    neto, saldo por tipo de cuenta, presupuestos, deudas y objetivos) y tus movimientos más
+    recientes.
+  </p>
+
+  <div class="warn">
+    <div class="warn-title">Sobre el título de tus movimientos</div>
+    <p style="margin:0;">
+      Se envía el título que tú escribes en cada movimiento. Es lo que permite que Flux te hable de
+      "lo que gastas en el supermercado" en lugar de hablar solo de categorías abstractas. Si
+      escribes un título con información que prefieres no compartir, ten en cuenta que ese texto
+      sale del dispositivo cuando usas estas funciones. También se envían el título de tus
+      objetivos de ahorro y el nombre que le hayas dado a cada deuda.
+    </p>
+  </div>
+
+  <p>
+    <strong>Lo que no se envía nunca en estas funciones:</strong> tu nombre, tu correo electrónico,
+    el nombre o alias que le hayas puesto a cada cuenta, los números de cuenta, y el campo de notas
+    de los movimientos.
+  </p>
+  <p>
+    <strong>Informe fiscal.</strong> Se envían las cifras ya calculadas de cada inmueble (ingresos,
+    intereses, gastos, amortización, resultado, días alquilado y vacío) y un recuento de cuántos
+    contratos hay y en cuántos falta el NIF. No se envía el nombre del inmueble, ni su dirección,
+    ni su referencia catastral, ni el nombre o el NIF de ningún inquilino.
+  </p>
+  <p>
+    <strong>Escaneo de tickets.</strong> Se envía la fotografía del ticket que tú hagas, para
+    extraer de ella el importe, el comercio y la fecha.
+  </p>
+  <p>
+    <strong>Avatar con inteligencia artificial.</strong> Se envía la fotografía que tú elijas, para
+    generar la caricatura.
+  </p>
+
+  <h3>Quién procesa cada cosa</h3>
+  <ul>
+    <li><strong>Anthropic (Claude)</strong> procesa el texto de todas las funciones anteriores y la
+    fotografía del escaneo de tickets.</li>
+    <li><strong>Google (Gemini)</strong> procesa únicamente la fotografía del avatar.</li>
+  </ul>
+  <p>
+    Ambos actúan como encargados del tratamiento y tratan esos datos conforme a sus propios
+    términos de uso y políticas de privacidad, que puedes consultar en sus sitios web.
+  </p>
+
+  <h3>Qué guardamos nosotros</h3>
+  <div class="card">
+    <div class="card-title">Nada del contenido</div>
+    <p style="margin:0;">
+      Ni tus cifras, ni los títulos de tus movimientos, ni las fotografías. Nuestra función recibe
+      los datos, los reenvía al proveedor, te devuelve la respuesta y no conserva ninguna de las
+      dos cosas. Los registros técnicos guardan únicamente datos de funcionamiento: qué tipo de
+      consulta se hizo, qué modelo se usó, cuánto ocupó la respuesta y si se completó
+      correctamente. Nunca el contenido de la consulta ni de la respuesta.
+    </p>
+  </div>
+  <p>
+    Sí se guarda, asociado a tu identificador anónimo, si tu suscripción está activa y cuántas
+    consultas has hecho este mes, para poder aplicar los límites de uso.
+  </p>
+
+  <h3>Quién puede usar estas funciones</h3>
+  <p>
+    Casi todas requieren la suscripción Premium. Hay una excepción: el análisis mensual se puede
+    usar <strong>una vez al mes sin suscripción</strong>, para que puedas probar la función antes
+    de decidir. Si la usas, se envían los mismos datos descritos arriba.
+  </p>
+
+  <h2>5. Datos de otras personas que tú introduces</h2>
+  <p>
+    Si registras contratos de alquiler, estarás guardando el nombre y el NIF de tus inquilinos, que
+    son datos personales de otra persona. Se guardan cifrados en tu teléfono y, desde la versión
+    1.1.0, no salen de él en ningún caso: ni a nuestro servidor ni a ningún proveedor de
+    inteligencia artificial.
+  </p>
+  <p>
+    Aun así, eres tú quien decide introducirlos y quien comparte el PDF del informe, de modo que la
+    responsabilidad sobre esos datos frente a esas personas es tuya. Te recomendamos introducir
+    solo lo que de verdad necesites para tu declaración.
+  </p>
+
+  <h2>6. Cotizaciones de mercado (fondos, acciones, criptomonedas)</h2>
+  <p>
+    Si consultas el precio de un fondo, una acción o una criptomoneda, SmartFlow contacta
+    directamente desde tu dispositivo con Alpha Vantage y CoinGecko para obtener la cotización. Se
+    envía únicamente el identificador del activo que consultas, nunca cuánto tienes ni ningún otro
+    dato tuyo.
+  </p>
+  <p>
+    Para Alpha Vantage necesitas introducir tu propia clave de API, que se guarda solo en tu
+    dispositivo. Estas consultas se rigen también por las políticas de privacidad de Alpha Vantage
+    y CoinGecko.
+  </p>
+
+  <h2>7. Suscripción y pagos</h2>
+  <p>
+    La compra y la gestión de la suscripción Premium las procesan RevenueCat y Google Play, que
+    reciben la información necesaria para validar tu suscripción. SmartFlow no ve ni almacena en
+    ningún momento tus datos de pago: ni el número de tarjeta, ni la cuenta bancaria, ni nada
+    parecido. Eso lo gestiona directamente Google Play.
+  </p>
+  <p>
+    Cuando tu suscripción cambia de estado, RevenueCat nos avisa y nosotros guardamos únicamente si
+    está activa o no, asociado a tu identificador anónimo.
+  </p>
+  <p>
+    Puedes gestionar o cancelar tu suscripción en cualquier momento desde
+    <strong>Ajustes → Suscripción → Gestionar suscripción</strong>, que te lleva a la página de
+    Google Play.
+  </p>
+
+  <h2>8. Datos de uso e informes de fallos</h2>
+  <p>
+    <strong>Analítica de uso (Firebase Analytics).</strong> Registra qué pantallas se visitan y con
+    qué frecuencia, para saber qué partes de la aplicación se usan de verdad. Son datos de
+    navegación: qué pantalla se abre y cuándo. Nunca importes, categorías, títulos de movimientos
+    ni ningún otro dato financiero.
+  </p>
+  <p>
+    <strong>Informes de fallos (Firebase Crashlytics).</strong> Cuando la aplicación falla, se envía
+    un informe técnico con el modelo de teléfono, la versión de Android, la versión de la
+    aplicación y el detalle del error. Sirve para poder arreglarlo. No incluye tus datos
+    financieros.
+  </p>
+  <p>
+    <strong>Verificación de la aplicación (Firebase App Check y Play Integrity).</strong> Comprueban
+    que las peticiones vienen de la aplicación real instalada desde Google Play, y no de un programa
+    que se hace pasar por ella. Es una medida contra el abuso del servicio.
+  </p>
+  <p>
+    <strong>Identificación anónima (Firebase Authentication).</strong> Cada instalación recibe un
+    identificador anónimo generado automáticamente. No está asociado a tu nombre, tu correo ni
+    ningún dato personal, y sirve para aplicar los límites de uso y saber si tu suscripción está
+    activa. Si desinstalas y vuelves a instalar la aplicación, se genera uno nuevo. Puedes verlo y
+    copiarlo en Ajustes → Acerca de.
+  </p>
+
+  <h2>9. Entrada por voz</h2>
+  <p>
+    Si registras movimientos por voz, el audio lo procesa el reconocimiento de voz del propio
+    sistema Android de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe
+    el texto ya transcrito. Ten en cuenta que, según la configuración de tu teléfono, ese
+    reconocimiento puede realizarlo Google en sus servidores, conforme a la política de privacidad
+    de Google.
+  </p>
+
+  <h2>10. Transferencias internacionales</h2>
+  <p>
+    Nuestro servidor está en la Unión Europea (Google Cloud, región europe-west1). Los proveedores
+    de inteligencia artificial descritos en la sección 4 pueden procesar los datos fuera del
+    Espacio Económico Europeo, principalmente en Estados Unidos, amparados en las garantías
+    previstas por el Reglamento General de Protección de Datos, como las cláusulas contractuales
+    tipo.
+  </p>
+
+  <h2>11. Cuánto tiempo se conservan los datos</h2>
+  <ul>
+    <li>Los datos que están en tu teléfono se conservan mientras tú quieras, y desaparecen al
+    borrarlos desde la aplicación o al desinstalarla.</li>
+    <li>Lo que guardamos nosotros —el estado de tu suscripción y tus contadores de uso, asociados
+    al identificador anónimo— se conserva mientras uses la aplicación, y se elimina si nos lo
+    pides.</li>
+    <li>Los datos de analítica y de fallos se conservan conforme a los plazos de Firebase, que hoy
+    son de catorce meses para la analítica.</li>
+  </ul>
+
+  <h2>12. Lo que SmartFlow no hace</h2>
+  <ul>
+    <li>No se conecta a tu banco ni accede a tus cuentas bancarias reales</li>
+    <li>No vende tus datos a terceros ni los usa con fines publicitarios</li>
+    <li>No muestra anuncios</li>
+    <li>No usa tus datos para entrenar modelos de inteligencia artificial</li>
+    <li>No guarda en ningún servidor tus movimientos, tus cifras ni tus fotografías</li>
+  </ul>
+
+  <h2>13. Tus derechos</h2>
+  <p>
+    La mayor parte de tus datos nunca sale de tu dispositivo, así que tienes control directo sobre
+    ellos: puedes consultarlos, editarlos, exportarlos (Ajustes → Crear copia de seguridad) o
+    borrarlos por completo (Ajustes → Borrar todos los datos) en cualquier momento, sin pedirnos
+    permiso.
+  </p>
+  <p>
+    Sobre los datos que sí tratamos nosotros —el estado de tu suscripción, tus contadores de uso y
+    los datos de analítica y fallos— tienes los derechos de acceso, rectificación, supresión,
+    limitación, oposición y portabilidad que reconoce el Reglamento General de Protección de Datos.
+  </p>
+
+  <h2 id="eliminacion-datos">14. Cómo pedir la eliminación de tus datos</h2>
+  <p>
+    Para solicitar que eliminemos los datos de <strong>SmartFlow</strong> que guardamos en nuestros
+    servidores, sigue estos pasos:
+  </p>
+  <ul>
+    <li>Abre SmartFlow y ve a <strong>Ajustes → Acerca de → Identificador anónimo</strong>. Tócalo
+    para copiarlo.</li>
+    <li>Escríbenos a <a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a> desde
+    cualquier dirección, indicando que quieres eliminar tus datos y pegando ese identificador.</li>
+    <li>Eliminaremos tu documento de usuario y tus contadores de uso en un plazo máximo de
+    <strong>treinta días</strong>, y te lo confirmaremos por correo.</li>
+  </ul>
+
+  <div class="card">
+    <div class="card-title">Qué se elimina y qué se conserva</div>
+    <ul style="margin:0;">
+      <li><strong>Se elimina:</strong> tu documento de usuario (el estado de tu suscripción) y tus
+      contadores de uso mensual, ambos asociados a tu identificador anónimo.</li>
+      <li><strong>Se conserva:</strong> los datos agregados de analítica y los informes de fallos,
+      que no permiten identificarte y se eliminan solos conforme a los plazos de Firebase (catorce
+      meses para la analítica). También los registros contables de compra que Google Play está
+      obligado a conservar por ley fiscal, y sobre los que nosotros no tenemos control.</li>
+      <li><strong>No se ve afectado:</strong> nada de lo que hay en tu teléfono. Eso lo borras tú
+      desde Ajustes → Borrar todos los datos, o desinstalando la aplicación.</li>
+    </ul>
+  </div>
+
+  <div class="warn">
+    <div class="warn-title">Eliminar tus datos no cancela tu suscripción</div>
+    <p style="margin:0;">
+      La cancelación se hace desde Google Play (o desde Ajustes → Suscripción → Gestionar
+      suscripción, que te lleva allí). Si eliminas tus datos sin cancelar, Google Play te seguirá
+      cobrando.
+    </p>
+  </div>
+
+  <h2>15. Menores de edad</h2>
+  <p>
+    SmartFlow no está dirigida a menores de edad y no recopila conscientemente datos de menores. Si
+    crees que un menor nos ha proporcionado datos personales, contáctanos y los eliminaremos.
+  </p>
+
+  <h2>16. Cambios en esta política</h2>
+  <p>
+    Podemos actualizar esta política si cambia cómo funciona la aplicación. Publicaremos cualquier
+    cambio en esta misma página, con la fecha de actualización arriba. Si el cambio afecta de forma
+    significativa a los datos que salen de tu dispositivo, te avisaremos dentro de la aplicación.
+  </p>
+
+  <div class="contact">
+    <p style="margin:0 0 4px; font-weight:700;">¿Alguna pregunta sobre tu privacidad?</p>
+    <p style="margin:0;"><a href="mailto:smartbalanceapp@gmail.com">smartbalanceapp@gmail.com</a></p>
+  </div>
+
+  <footer>
+    SmartFlow — parte de la saga SmartBalance
+  </footer>
+
+</div>
+</body>
+</html>
