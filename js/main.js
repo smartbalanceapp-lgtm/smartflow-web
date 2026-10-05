@@ -197,6 +197,10 @@ var LAUNCHED = false;
     'screens.property': 'Inmuebles',
     'screens.savings': 'Ahorro',
     'screens.profile': 'Perfil',
+    'screens.fiscal': 'Informe fiscal',
+    'screens.story': 'Història del mes',
+    'screens.fiscal': 'Informe fiscal',
+    'screens.story': 'Historia del mes',
 
     'alt.dashboard': 'Pantalla principal de SmartFlow con el resumen del mes y el patrimonio neto',
     'alt.property': 'Ficha de un inmueble con ingresos, gastos, cashflow e hipoteca',
@@ -206,6 +210,8 @@ var LAUNCHED = false;
     'alt.investing': 'Cartera de fondos y acciones con su reparto',
     'alt.savings': 'Objetivos de ahorro y fondo de emergencia',
     'alt.profile': 'Ajustes de apariencia, idioma y moneda',
+    'alt.fiscal': 'Informe fiscal en PDF con el resumen del año, los ingresos, los gastos deducibles y la amortización de cada inmueble',
+    'alt.story': 'Historia del mes con el gasto total, las categorías principales y el comentario de Flux',
 
     'why.eyebrow': 'Tus datos',
     'why.title': 'Local por defecto, y te decimos exactamente qué sale',
@@ -426,6 +432,8 @@ var LAUNCHED = false;
     'alt.investing': 'Cartera de fons i accions amb el seu repartiment',
     'alt.savings': 'Objectius d’estalvi i fons d’emergència',
     'alt.profile': 'Configuració d’aparença, idioma i moneda',
+    'alt.fiscal': 'Informe fiscal en PDF amb el resum de l\'any, els ingressos, les despeses deduïbles i l\'amortització de cada immoble',
+    'alt.story': 'Història del mes amb la despesa total, les categories principals i el comentari d\'en Flux',
 
     'why.eyebrow': 'Les teves dades',
     'why.title': 'Local per defecte, i et diem exactament què surt',
@@ -637,6 +645,8 @@ var LAUNCHED = false;
     'screens.property': 'Properties',
     'screens.savings': 'Savings',
     'screens.profile': 'Profile',
+    'screens.fiscal': 'Tax report',
+    'screens.story': 'Monthly story',
 
     'alt.dashboard': 'SmartFlow home screen showing the monthly summary and net worth',
     'alt.property': 'Property profile with income, expenses, cashflow and mortgage',
@@ -646,6 +656,8 @@ var LAUNCHED = false;
     'alt.investing': 'Fund and stock portfolio with its allocation',
     'alt.savings': 'Savings goals and emergency fund',
     'alt.profile': 'Appearance, language and currency settings',
+    'alt.fiscal': 'Tax report PDF with the year summary, income, deductible expenses and depreciation for each property',
+    'alt.story': 'Monthly story with total spending, top categories and Flux\'s comment',
 
     'why.eyebrow': 'Your data',
     'why.title': 'Local by default — and we tell you exactly what leaves',
