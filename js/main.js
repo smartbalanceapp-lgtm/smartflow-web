@@ -43,7 +43,7 @@ var LAUNCHED = true;
     'nav.screens': 'Capturas',
     'nav.privacy': 'Privacidad',
 
-    'hero.eyebrow': 'Finanzas personales · Android',
+    'hero.eyebrow': 'Finanzas personales · Android · iPhone en camino',
     'hero.title': 'El dinero fluye, tú lo controlas',
     'hero.sub': 'SmartFlow no te pide las claves de tu banco, tus tarjetas ni tu bróker. Tú decides qué apuntas — y casi nada hay que apuntarlo a mano.',
     'hero.cta': 'Descargar en Google Play',
@@ -241,7 +241,7 @@ var LAUNCHED = true;
     'faq.q4': '¿Y si cambio de móvil?',
     'faq.a4': 'Exportas la copia de seguridad en JSON desde el móvil viejo y la restauras en el nuevo. El fichero es tuyo: lo guardas donde quieras y nosotros no tenemos acceso a él.',
     'faq.q5': '¿Está en iPhone?',
-    'faq.a5': 'Todavía no. SmartFlow es una app de Android, y lo será durante un tiempo.',
+    'faq.a5': 'Todavía no, pero ya está en desarrollo. Si quieres que te avisemos cuando salga, escríbenos a info@appsmartflow.com.',
     'faq.q6': '¿Quién hay detrás?',
     'faq.a6': 'Una persona. SmartFlow es parte de la saga SmartBalance y se desarrolla de forma independiente, sin inversores que quieran rentabilizar tus datos.',
 
@@ -269,7 +269,7 @@ var LAUNCHED = true;
     'nav.screens': 'Captures',
     'nav.privacy': 'Privacitat',
 
-    'hero.eyebrow': 'Finances personals · Android',
+    'hero.eyebrow': 'Finances personals · Android · iPhone en camí',
     'hero.title': 'Els diners flueixen, tu els controles',
     'hero.sub': 'SmartFlow no et demana les claus del teu banc, les teves targetes ni el teu bròker. Tu decideixes què apuntes — i gairebé res s’ha d’apuntar a mà.',
     'hero.cta': 'Descarregar a Google Play',
@@ -463,7 +463,7 @@ var LAUNCHED = true;
     'faq.q4': 'I si canvio de mòbil?',
     'faq.a4': 'Exportes la còpia de seguretat en JSON des del mòbil vell i la restaures al nou. El fitxer és teu: el guardes on vulguis i nosaltres no hi tenim accés.',
     'faq.q5': 'Està a l’iPhone?',
-    'faq.a5': 'Encara no. SmartFlow és una app d’Android, i ho serà durant un temps.',
+    'faq.a5': "Encara no, però ja està en desenvolupament. Si vols que t'avisem quan surti, escriu-nos a info@appsmartflow.com.",
     'faq.q6': 'Qui hi ha al darrere?',
     'faq.a6': 'Una persona. SmartFlow forma part de la saga SmartBalance i es desenvolupa de manera independent, sense inversors que vulguin rendibilitzar les teves dades.',
 
@@ -491,7 +491,7 @@ var LAUNCHED = true;
     'nav.screens': 'Screenshots',
     'nav.privacy': 'Privacy',
 
-    'hero.eyebrow': 'Personal finance · Android',
+    'hero.eyebrow': 'Personal finance · Android · iPhone on the way',
     'hero.title': 'Your money flows, you’re in control',
     'hero.sub': 'SmartFlow never asks for your bank credentials, your cards or your broker. You decide what to log — and almost none of it has to be logged by hand.',
     'hero.cta': 'Get it on Google Play',
@@ -687,7 +687,7 @@ var LAUNCHED = true;
     'faq.q4': 'What if I change phones?',
     'faq.a4': 'You export the JSON backup from the old phone and restore it on the new one. The file is yours: you keep it wherever you like and we have no access to it.',
     'faq.q5': 'Is there an iPhone version?',
-    'faq.a5': 'Not yet. SmartFlow is an Android app, and will be for a while.',
+    'faq.a5': "Not yet, but it's already in development. If you'd like us to let you know when it launches, email info@appsmartflow.com.",
     'faq.q6': 'Who is behind it?',
     'faq.a6': 'One person. SmartFlow is part of the SmartBalance family and is developed independently, with no investors looking to monetize your data.',
 
