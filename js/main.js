@@ -9,7 +9,7 @@
    botones dirán "Próximamente en Google Play" y no enlazarán a ningún sitio.
    El día que la promociones a producción, cambia esta única línea a true.
    ========================================================================== */
-var LAUNCHED = false;
+var LAUNCHED = true;
 
 (function () {
   'use strict';
