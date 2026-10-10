@@ -25,6 +25,59 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Vídeo de presentación: estilos propios de esta sección -->
+  <style>
+    .video-section { padding-top: 24px; }
+    .video-frame {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #0b2a24;
+      box-shadow: 0 30px 70px -28px rgba(6, 60, 48, .45), 0 0 0 1px rgba(16, 185, 129, .18);
+    }
+    .video-frame img,
+    .video-frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0; display: block; object-fit: cover;
+    }
+    .video-play {
+      position: absolute; inset: 0;
+      display: grid; place-items: center;
+      padding: 0; border: 0; cursor: pointer;
+      background: transparent;
+    }
+    .video-play__btn {
+      display: grid; place-items: center;
+      width: 92px; height: 92px; border-radius: 50%;
+      background: #10B981; color: #fff;
+      box-shadow: 0 14px 34px -8px rgba(6, 95, 70, .55), 0 0 0 10px rgba(16, 185, 129, .18);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .video-play__btn svg { width: 36px; height: 36px; margin-left: 5px; }
+    .video-play:hover .video-play__btn,
+    .video-play:focus-visible .video-play__btn {
+      transform: scale(1.07);
+      box-shadow: 0 18px 40px -8px rgba(6, 95, 70, .6), 0 0 0 14px rgba(16, 185, 129, .22);
+    }
+    .video-play:focus-visible { outline: 3px solid #10B981; outline-offset: -3px; border-radius: 24px; }
+    .video-note {
+      max-width: 1040px; margin: 14px auto 0;
+      text-align: center; font-size: .9rem; opacity: .7;
+    }
+    @media (max-width: 640px) {
+      .video-frame { border-radius: 16px; }
+      .video-play__btn { width: 68px; height: 68px; }
+      .video-play__btn svg { width: 26px; height: 26px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .video-play__btn { transition: none; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
@@ -162,6 +215,28 @@
         <span data-i18n="strip.5">0 anuncios</span><i></i>
         <span data-i18n="strip.6">Copia de seguridad tuya, en JSON</span><i></i>
       </div>
+    </div>
+  </section>
+
+  <!-- =============================== VÍDEO ============================== -->
+  <section class="section video-section" id="video">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="video.eyebrow">En 2 minutos</span></p>
+        <h2 data-reveal data-i18n="video.title">Mira SmartFlow por dentro</h2>
+        <p class="lede lede--sm" data-reveal data-i18n="video.sub">Voz, recurrentes, inmuebles con hipoteca real, inversión y el Pack Premium, tal como funcionan en la app.</p>
+      </header>
+
+      <div class="video-frame" data-reveal data-video-id="cLqHogoB60k">
+        <img src="assets/video-poster.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="">
+        <button type="button" class="video-play" data-video-play
+                data-i18n-aria="video.play" aria-label="Reproducir vídeo">
+          <span class="video-play__btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+          </span>
+        </button>
+      </div>
+      <p class="video-note" data-i18n="video.note">El vídeo se carga desde YouTube solo cuando pulsas reproducir.</p>
     </div>
   </section>
 
@@ -675,5 +750,21 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Vídeo: no se conecta con YouTube hasta que la persona pulsa reproducir.
+    document.querySelectorAll('[data-video-play]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var frame = btn.closest('[data-video-id]');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + frame.getAttribute('data-video-id') +
+                     '?autoplay=1&rel=0&playsinline=1';
+        iframe.title = 'SmartFlow';
+        iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        iframe.allowFullscreen = true;
+        frame.innerHTML = '';
+        frame.appendChild(iframe);
+      });
+    });
+  </script>
 </body>
 </html>
