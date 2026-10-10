@@ -53,6 +53,12 @@ var LAUNCHED = true;
     'hero.trust2': 'Sin anuncios',
     'hero.trust3': 'Español, catalán e inglés',
 
+    'video.eyebrow': 'En 2 minutos',
+    'video.title': 'Mira SmartFlow por dentro',
+    'video.sub': 'Voz, recurrentes, inmuebles con hipoteca real, inversión y el Pack Premium, tal como funcionan en la app.',
+    'video.play': 'Reproducir vídeo',
+    'video.note': 'El vídeo se carga desde YouTube solo cuando pulsas reproducir.',
+
     'chip.networth': 'Patrimonio neto',
     'hero.flux': '¡Hola! Soy Flux',
     'mood.eyebrow': 'Flux tiene cara',
@@ -279,6 +285,12 @@ var LAUNCHED = true;
     'hero.trust2': 'Sense anuncis',
     'hero.trust3': 'Català, castellà i anglès',
 
+    'video.eyebrow': 'En 2 minuts',
+    'video.title': 'Mira SmartFlow per dins',
+    'video.sub': 'Veu, recurrents, immobles amb hipoteca real, inversió i el Pack Premium, tal com funcionen dins de SmartFlow.',
+    'video.play': 'Reprodueix el vídeo',
+    'video.note': 'El vídeo es carrega des de YouTube només quan prems reproduir.',
+
     'chip.networth': 'Patrimoni net',
     'hero.flux': 'Hola! Sóc en Flux',
     'mood.eyebrow': 'En Flux té cara',
@@ -500,6 +512,12 @@ var LAUNCHED = true;
     'hero.trust1': 'No bank connection',
     'hero.trust2': 'No ads',
     'hero.trust3': 'Spanish, Catalan and English',
+
+    'video.eyebrow': 'In 2 minutes',
+    'video.title': 'Take a look inside SmartFlow',
+    'video.sub': 'Voice entry, recurring items, properties with real mortgages, investing and the Premium Pack, exactly as they work in the app.',
+    'video.play': 'Play video',
+    'video.note': 'The video only loads from YouTube when you press play. The video is in Spanish.',
 
     'chip.networth': 'Net worth',
     'hero.flux': 'Hi! I’m Flux',
