@@ -62,12 +62,12 @@
 
   <span class="badge">SmartFlow</span>
   <h1>Política de Privacidad</h1>
-  <p class="updated">Última actualización: 6 de octubre de 2026</p>
+  <p class="updated">Última actualización: 1 de noviembre de 2026</p>
 
   <p>
     Esta Política de Privacidad describe cómo <strong>SmartFlow</strong> ("la aplicación",
-    "nosotros") trata los datos cuando usas la aplicación. SmartFlow está desarrollada de forma
-    independiente y su principio de diseño es que tus datos financieros permanezcan en tu
+    "nosotros") trata los datos cuando usas la aplicación, tanto en Android como en iPhone.
+    SmartFlow está desarrollada de forma independiente y su principio de diseño es que tus datos financieros permanezcan en tu
     dispositivo siempre que sea posible.
   </p>
 
@@ -107,16 +107,16 @@
     <div class="card-title">Cifrado</div>
     <p style="margin:0;">
       La base de datos está cifrada con una clave aleatoria que se genera en tu propio teléfono y
-      se guarda en el almacén seguro del sistema (Android Keystore). Esa clave nunca sale del
-      dispositivo y nosotros no la tenemos.
+      se guarda en el almacén seguro del sistema (Android Keystore en Android, el Llavero en
+      iPhone). Esa clave nunca sale del dispositivo y nosotros no la tenemos.
     </p>
   </div>
 
   <div class="card">
-    <div class="card-title">Copia de seguridad automática desactivada</div>
+    <div class="card-title">Copias de seguridad automáticas excluidas</div>
     <p style="margin:0;">
-      La aplicación tiene desactivada la copia de seguridad automática de Android, así que tu base
-      de datos no se sube a Google Drive ni a ninguna copia del sistema. La contrapartida es que,
+      La aplicación excluye su base de datos de las copias de seguridad automáticas del sistema:
+      no se sube a Google Drive en Android ni a iCloud en iPhone. La contrapartida es que,
       si cambias de móvil o reinstalas, tienes que hacer tú la copia desde Ajustes.
     </p>
   </div>
@@ -150,6 +150,15 @@
     Estas funciones son la única parte de SmartFlow que envía datos financieros fuera de tu
     dispositivo, y solo se activan cuando tú las usas.
   </p>
+  <div class="card">
+    <div class="card-title">Te pedimos permiso antes</div>
+    <p style="margin:0;">
+      La primera vez que usas una función de inteligencia artificial, SmartFlow te explica qué
+      datos se van a enviar y a quién, y te pide permiso. Si no lo das, no se envía nada. Puedes
+      retirar o volver a dar ese permiso cuando quieras en <strong>Ajustes → Privacidad →
+      Permitir funciones de IA</strong>.
+    </p>
+  </div>
 
   <h3>Cómo funciona el circuito</h3>
   <p>
@@ -261,10 +270,12 @@
 
   <h2>7. Suscripción y pagos</h2>
   <p>
-    La compra y la gestión de la suscripción Premium las procesan RevenueCat y Google Play, que
-    reciben la información necesaria para validar tu suscripción. SmartFlow no ve ni almacena en
+    La compra y la gestión de la suscripción Premium las procesan RevenueCat y la tienda de tu
+    dispositivo (Google Play en Android, App Store en iPhone), que reciben la información necesaria
+    para validar tu suscripción. SmartFlow no ve ni almacena en
     ningún momento tus datos de pago: ni el número de tarjeta, ni la cuenta bancaria, ni nada
-    parecido. Eso lo gestiona directamente Google Play.
+    parecido. Eso lo gestiona directamente
+    la tienda.
   </p>
   <p>
     Cuando tu suscripción cambia de estado, RevenueCat nos avisa y nosotros guardamos únicamente si
@@ -272,8 +283,9 @@
   </p>
   <p>
     Puedes gestionar o cancelar tu suscripción en cualquier momento desde
-    <strong>Ajustes → Suscripción → Gestionar suscripción</strong>, que te lleva a la página de
-    Google Play.
+    <strong>Ajustes → Suscripción → Gestionar suscripción</strong>, dentro de la aplicación, que te
+    lleva a la página de tu tienda. En iPhone también puedes hacerlo desde los Ajustes del propio
+    teléfono: <strong>Ajustes → [tu nombre] → Suscripciones</strong>.
   </p>
 
   <h2>8. Datos de uso e informes de fallos</h2>
@@ -285,14 +297,15 @@
   </p>
   <p>
     <strong>Informes de fallos (Firebase Crashlytics).</strong> Cuando la aplicación falla, se envía
-    un informe técnico con el modelo de teléfono, la versión de Android, la versión de la
-    aplicación y el detalle del error. Sirve para poder arreglarlo. No incluye tus datos
+    un informe técnico con el modelo de teléfono, la versión del sistema operativo, la versión de
+    la aplicación y el detalle del error. Sirve para poder arreglarlo. No incluye tus datos
     financieros.
   </p>
   <p>
-    <strong>Verificación de la aplicación (Firebase App Check y Play Integrity).</strong> Comprueban
-    que las peticiones vienen de la aplicación real instalada desde Google Play, y no de un programa
-    que se hace pasar por ella. Es una medida contra el abuso del servicio.
+    <strong>Verificación de la aplicación (Firebase App Check).</strong> Comprueba que las
+    peticiones vienen de la aplicación real instalada desde la tienda oficial, y no de un programa
+    que se hace pasar por ella. Para ello usa Play Integrity en Android y App Attest en iPhone. Es
+    una medida contra el abuso del servicio.
   </p>
   <p>
     <strong>Identificación anónima (Firebase Authentication).</strong> Cada instalación recibe un
@@ -305,11 +318,15 @@
   <h2>9. Entrada por voz</h2>
   <p>
     Si registras movimientos por voz, el audio lo procesa el reconocimiento de voz del propio
-    sistema Android de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe
-    el texto ya transcrito. Ten en cuenta que, según la configuración de tu teléfono, ese
-    reconocimiento puede realizarlo Google en sus servidores, conforme a la política de privacidad
-    de Google.
+    sistema de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe el texto
+    ya transcrito.
   </p>
+  <ul>
+    <li><strong>En Android</strong>, según la configuración de tu teléfono, ese reconocimiento puede
+    realizarlo Google en sus servidores, conforme a la política de privacidad de Google.</li>
+    <li><strong>En iPhone</strong>, lo realiza el reconocimiento de voz de Apple, que puede enviar el
+    audio a los servidores de Apple, conforme a la política de privacidad de Apple.</li>
+  </ul>
 
   <h2>10. Transferencias internacionales</h2>
   <p>
@@ -336,6 +353,7 @@
     <li>No se conecta a tu banco ni accede a tus cuentas bancarias reales</li>
     <li>No vende tus datos a terceros ni los usa con fines publicitarios</li>
     <li>No muestra anuncios</li>
+    <li>No te rastrea entre aplicaciones ni sitios web de otras empresas</li>
     <li>No usa tus datos para entrenar modelos de inteligencia artificial</li>
     <li>No guarda en ningún servidor tus movimientos, tus cifras ni tus fotografías</li>
   </ul>
@@ -374,8 +392,8 @@
       contadores de uso mensual, ambos asociados a tu identificador anónimo.</li>
       <li><strong>Se conserva:</strong> los datos agregados de analítica y los informes de fallos,
       que no permiten identificarte y se eliminan solos conforme a los plazos de Firebase (catorce
-      meses para la analítica). También los registros contables de compra que Google Play está
-      obligado a conservar por ley fiscal, y sobre los que nosotros no tenemos control.</li>
+      meses para la analítica). También los registros contables de compra que Google Play o la App
+      Store están obligados a conservar por ley fiscal, y sobre los que nosotros no tenemos control.</li>
       <li><strong>No se ve afectado:</strong> nada de lo que hay en tu teléfono. Eso lo borras tú
       desde Ajustes → Borrar todos los datos, o desinstalando la aplicación.</li>
     </ul>
@@ -384,9 +402,9 @@
   <div class="warn">
     <div class="warn-title">Eliminar tus datos no cancela tu suscripción</div>
     <p style="margin:0;">
-      La cancelación se hace desde Google Play (o desde Ajustes → Suscripción → Gestionar
-      suscripción, que te lleva allí). Si eliminas tus datos sin cancelar, Google Play te seguirá
-      cobrando.
+      La cancelación se hace desde la tienda donde la contrataste, Google Play o App Store (o desde
+      Ajustes → Suscripción → Gestionar suscripción, que te lleva allí). Si eliminas tus datos sin
+      cancelar, la tienda te seguirá cobrando.
     </p>
   </div>
 
