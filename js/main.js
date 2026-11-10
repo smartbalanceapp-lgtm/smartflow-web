@@ -21,6 +21,9 @@ var LAUNCHED = true;
   var FALLBACK = 'es';
   var CURRENT_LANG = FALLBACK;
   var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.manel.smartflow';
+  // App Store (publicada el 10 nov 2026). Los botones [data-appstore-link]
+  // no dependen de LAUNCHED: enlazan siempre aquí.
+  var APP_STORE_URL = 'https://apps.apple.com/es/app/id6823251808';
 
   root.classList.remove('no-js');
 
@@ -43,10 +46,11 @@ var LAUNCHED = true;
     'nav.screens': 'Capturas',
     'nav.privacy': 'Privacidad',
 
-    'hero.eyebrow': 'Finanzas personales · Android · iPhone en camino',
+    'hero.eyebrow': 'Finanzas personales · Android · iPhone',
     'hero.title': 'El dinero fluye, tú lo controlas',
     'hero.sub': 'SmartFlow no te pide las claves de tu banco, tus tarjetas ni tu bróker. Tú decides qué apuntas — y casi nada hay que apuntarlo a mano.',
     'hero.cta': 'Descargar en Google Play',
+    'hero.ctaIos': 'Descargar en App Store',
     'hero.ctaSoon': 'Próximamente en Google Play',
     'hero.cta2': 'Ver qué incluye gratis',
     'hero.trust1': 'Sin conectar tu banco',
@@ -174,7 +178,7 @@ var LAUNCHED = true;
     'plan.free.7': 'Los 4 widgets, 3 paletas, 3 idiomas y 32 divisas',
     'plan.free.8': 'Hasta 2 inmuebles, 3 posiciones y 2 cuentas activas',
     'plan.free.9': '1 resumen mensual escrito por Flux al mes',
-    'plan.premium.ribbon': '15 días de prueba',
+    'plan.premium.ribbon': 'Prueba gratis',
     'plan.premium.name': 'Pack Premium',
     'plan.premium.amount': '4,99 €',
     'plan.premium.per': '/mes',
@@ -190,7 +194,9 @@ var LAUNCHED = true;
     'plan.premium.8': 'Avatar caricaturizado',
     'plan.premium.9': '40 consultas de IA al mes',
     'plan.premium.cta': 'Probar 15 días',
-    'pricing.note': 'La prueba de 15 días está en el plan mensual y se cancela desde Google Play cuando quieras. Si dejas Premium, no se borra nada: lo que ya tenías sigue ahí y se puede seguir editando.',
+    'plan.premium.ctaAndroid': 'Probar gratis en Android',
+    'plan.premium.ctaIos': 'Probar gratis en iPhone',
+    'pricing.note': 'La prueba gratis está en el plan mensual (15 días en Android, 2 semanas en iPhone) y se cancela desde Google Play o la App Store cuando quieras. Si dejas Premium, no se borra nada: lo que ya tenías sigue ahí y se puede seguir editando.',
 
     'screens.eyebrow': 'Así se ve por dentro',
     'screens.title': 'Diseñada para mirarla cada día',
@@ -247,12 +253,12 @@ var LAUNCHED = true;
     'faq.q4': '¿Y si cambio de móvil?',
     'faq.a4': 'Exportas la copia de seguridad en JSON desde el móvil viejo y la restauras en el nuevo. El fichero es tuyo: lo guardas donde quieras y nosotros no tenemos acceso a él.',
     'faq.q5': '¿Está en iPhone?',
-    'faq.a5': 'Todavía no, pero ya está en desarrollo. Si quieres que te avisemos cuando salga, escríbenos a info@appsmartflow.com.',
+    'faq.a5': 'Sí. SmartFlow está en la App Store desde noviembre de 2026, con las mismas funciones que en Android, el widget para la pantalla de inicio y Face ID. Necesita iOS 15 o superior (el widget, iOS 17).',
     'faq.q6': '¿Quién hay detrás?',
     'faq.a6': 'Una persona. SmartFlow es parte de la saga SmartBalance y se desarrolla de forma independiente, sin inversores que quieran rentabilizar tus datos.',
 
     'closer.title': 'Empieza gratis. Sin cuenta, sin tarjeta, sin dar las claves de nada.',
-    'closer.note': 'Android 8 o superior',
+    'closer.note': 'Android 8 o superior · iPhone con iOS 15 o superior',
 
     'footer.tagline': 'Parte de la saga SmartBalance',
     'footer.privacy': 'Privacidad',
@@ -275,10 +281,11 @@ var LAUNCHED = true;
     'nav.screens': 'Captures',
     'nav.privacy': 'Privacitat',
 
-    'hero.eyebrow': 'Finances personals · Android · iPhone en camí',
+    'hero.eyebrow': 'Finances personals · Android · iPhone',
     'hero.title': 'Els diners flueixen, tu els controles',
     'hero.sub': 'SmartFlow no et demana les claus del teu banc, les teves targetes ni el teu bròker. Tu decideixes què apuntes — i gairebé res s’ha d’apuntar a mà.',
     'hero.cta': 'Descarregar a Google Play',
+    'hero.ctaIos': 'Descarregar a l’App Store',
     'hero.ctaSoon': 'Properament a Google Play',
     'hero.cta2': 'Veure què inclou de franc',
     'hero.trust1': 'Sense connectar el teu banc',
@@ -406,7 +413,7 @@ var LAUNCHED = true;
     'plan.free.7': 'Els 4 widgets, 3 paletes, 3 idiomes i 32 divises',
     'plan.free.8': 'Fins a 2 immobles, 3 posicions i 2 comptes actius',
     'plan.free.9': '1 resum mensual escrit per Flux al mes',
-    'plan.premium.ribbon': '15 dies de prova',
+    'plan.premium.ribbon': 'Prova gratuïta',
     'plan.premium.name': 'Pack Premium',
     'plan.premium.amount': '4,99 €',
     'plan.premium.per': '/mes',
@@ -422,7 +429,9 @@ var LAUNCHED = true;
     'plan.premium.8': 'Avatar caricaturitzat',
     'plan.premium.9': '40 consultes d’IA al mes',
     'plan.premium.cta': 'Provar 15 dies',
-    'pricing.note': 'La prova de 15 dies és al pla mensual i es cancel·la des de Google Play quan vulguis. Si deixes Premium, no s’esborra res: el que ja tenies segueix allà i es pot continuar editant.',
+    'plan.premium.ctaAndroid': 'Provar gratis a Android',
+    'plan.premium.ctaIos': 'Provar gratis a l’iPhone',
+    'pricing.note': 'La prova gratuïta és al pla mensual (15 dies a Android, 2 setmanes a l’iPhone) i es cancel·la des de Google Play o l’App Store quan vulguis. Si deixes Premium, no s’esborra res: el que ja tenies segueix allà i es pot continuar editant.',
 
     'screens.eyebrow': 'Així es veu per dins',
     'screens.title': 'Dissenyada per mirar-la cada dia',
@@ -475,12 +484,12 @@ var LAUNCHED = true;
     'faq.q4': 'I si canvio de mòbil?',
     'faq.a4': 'Exportes la còpia de seguretat en JSON des del mòbil vell i la restaures al nou. El fitxer és teu: el guardes on vulguis i nosaltres no hi tenim accés.',
     'faq.q5': 'Està a l’iPhone?',
-    'faq.a5': "Encara no, però ja està en desenvolupament. Si vols que t'avisem quan surti, escriu-nos a info@appsmartflow.com.",
+    'faq.a5': 'Sí. SmartFlow és a l’App Store des del novembre de 2026, amb les mateixes funcions que a Android, el giny per a la pantalla d’inici i Face ID. Necessita iOS 15 o superior (el giny, iOS 17).',
     'faq.q6': 'Qui hi ha al darrere?',
     'faq.a6': 'Una persona. SmartFlow forma part de la saga SmartBalance i es desenvolupa de manera independent, sense inversors que vulguin rendibilitzar les teves dades.',
 
     'closer.title': 'Comença gratis. Sense compte, sense targeta, sense donar les claus de res.',
-    'closer.note': 'Android 8 o superior',
+    'closer.note': 'Android 8 o superior · iPhone amb iOS 15 o superior',
 
     'footer.tagline': 'Part de la saga SmartBalance',
     'footer.privacy': 'Privacitat',
@@ -503,10 +512,11 @@ var LAUNCHED = true;
     'nav.screens': 'Screenshots',
     'nav.privacy': 'Privacy',
 
-    'hero.eyebrow': 'Personal finance · Android · iPhone on the way',
+    'hero.eyebrow': 'Personal finance · Android · iPhone',
     'hero.title': 'Your money flows, you’re in control',
     'hero.sub': 'SmartFlow never asks for your bank credentials, your cards or your broker. You decide what to log — and almost none of it has to be logged by hand.',
     'hero.cta': 'Get it on Google Play',
+    'hero.ctaIos': 'Download on the App Store',
     'hero.ctaSoon': 'Coming soon to Google Play',
     'hero.cta2': 'See what’s free',
     'hero.trust1': 'No bank connection',
@@ -634,7 +644,7 @@ var LAUNCHED = true;
     'plan.free.7': 'All 4 widgets, 3 palettes, 3 languages and 32 currencies',
     'plan.free.8': 'Up to 2 properties, 3 positions and 2 active accounts',
     'plan.free.9': '1 monthly summary written by Flux each month',
-    'plan.premium.ribbon': '15-day trial',
+    'plan.premium.ribbon': 'Free trial',
     'plan.premium.name': 'Premium Pack',
     'plan.premium.amount': '\u20AC4.99',
     'plan.premium.per': '/month',
@@ -650,7 +660,9 @@ var LAUNCHED = true;
     'plan.premium.8': 'Cartoon avatar',
     'plan.premium.9': '40 AI queries a month',
     'plan.premium.cta': 'Start the 15-day trial',
-    'pricing.note': 'The 15-day trial is on the monthly plan and can be cancelled from Google Play whenever you want. If you drop Premium, nothing is deleted: what you already had stays there and stays editable.',
+    'plan.premium.ctaAndroid': 'Try it free on Android',
+    'plan.premium.ctaIos': 'Try it free on iPhone',
+    'pricing.note': 'The free trial is on the monthly plan (15 days on Android, 2 weeks on iPhone) and can be cancelled from Google Play or the App Store whenever you want. If you drop Premium, nothing is deleted: what you already had stays there and stays editable.',
 
     'screens.eyebrow': 'A look inside',
     'screens.title': 'Built to check every day',
@@ -705,12 +717,12 @@ var LAUNCHED = true;
     'faq.q4': 'What if I change phones?',
     'faq.a4': 'You export the JSON backup from the old phone and restore it on the new one. The file is yours: you keep it wherever you like and we have no access to it.',
     'faq.q5': 'Is there an iPhone version?',
-    'faq.a5': "Not yet, but it's already in development. If you'd like us to let you know when it launches, email info@appsmartflow.com.",
+    'faq.a5': 'Yes. SmartFlow has been on the App Store since November 2026, with the same features as on Android, a Home Screen widget and Face ID. It needs iOS 15 or later (iOS 17 for the widget).',
     'faq.q6': 'Who is behind it?',
     'faq.a6': 'One person. SmartFlow is part of the SmartBalance family and is developed independently, with no investors looking to monetize your data.',
 
     'closer.title': 'Start free. No account, no card, no credentials for anything.',
-    'closer.note': 'Android 8 or later',
+    'closer.note': 'Android 8 or later · iPhone with iOS 15 or later',
 
     'footer.tagline': 'Part of the SmartBalance family',
     'footer.privacy': 'Privacy',
@@ -722,15 +734,15 @@ var LAUNCHED = true;
   var META = {
     es: {
       title: 'SmartFlow — El dinero fluye, tú lo controlas',
-      desc: 'App de finanzas personales para Android: movimientos por voz, presupuesto 50/30/20, inmuebles con hipoteca real, inversión y patrimonio neto. Sin conectar tu banco, sin anuncios.'
+      desc: 'App de finanzas personales para Android e iPhone: movimientos por voz, presupuesto 50/30/20, inmuebles con hipoteca real, inversión y patrimonio neto. Sin conectar tu banco, sin anuncios.'
     },
     ca: {
       title: 'SmartFlow — Els diners flueixen, tu els controles',
-      desc: 'App de finances personals per a Android: moviments per veu, pressupost 50/30/20, immobles amb hipoteca real, inversió i patrimoni net. Sense connectar el teu banc, sense anuncis.'
+      desc: 'App de finances personals per a Android i iPhone: moviments per veu, pressupost 50/30/20, immobles amb hipoteca real, inversió i patrimoni net. Sense connectar el teu banc, sense anuncis.'
     },
     en: {
       title: 'SmartFlow — Your money flows, you’re in control',
-      desc: 'Personal finance app for Android: voice input, 50/30/20 budget, properties with real mortgages, investing and net worth. No bank connection, no ads.'
+      desc: 'Personal finance app for Android and iPhone: voice input, 50/30/20 budget, properties with real mortgages, investing and net worth. No bank connection, no ads.'
     }
   };
 
@@ -849,6 +861,9 @@ var LAUNCHED = true;
      ======================================================================= */
   function applyStoreState(lang) {
     var dict = T[lang] || T[FALLBACK];
+    each('[data-appstore-link]', function (a) {
+      a.setAttribute('href', APP_STORE_URL);
+    });
     each('[data-store-link]', function (a) {
       if (LAUNCHED) {
         a.setAttribute('href', PLAY_URL);
