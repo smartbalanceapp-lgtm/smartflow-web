@@ -48,6 +48,7 @@ var LAUNCHED = true;
 
     'hero.eyebrow': 'Pisos de alquiler y finanzas · Android · iPhone',
     'hero.title': 'Tus pisos y tus finanzas, en una sola app',
+    'hero.slogan': 'El dinero fluye, tú lo controlas',
     'hero.sub': 'SmartFlow es una app para llevar tus pisos de alquiler y tus finanzas en un solo sitio: rentabilidad real de cada piso, hipoteca con amortización real, informe para la renta y gastos del día a día. Sin conectar el banco.',
     'hero.cta': 'Descargar en Google Play',
     'hero.ctaIos': 'Descargar en App Store',
@@ -302,6 +303,7 @@ var LAUNCHED = true;
 
     'hero.eyebrow': 'Pisos de lloguer i finances · Android · iPhone',
     'hero.title': 'Els teus pisos i les teves finances, en una sola app',
+    'hero.slogan': 'Els diners flueixen, tu els controles',
     'hero.sub': 'SmartFlow és una app per portar els teus pisos de lloguer i les teves finances en un sol lloc: rendibilitat real de cada pis, hipoteca amb amortització real, informe per a la renda i despeses del dia a dia. Sense connectar el banc.',
     'hero.cta': 'Descarregar a Google Play',
     'hero.ctaIos': 'Descarregar a l’App Store',
@@ -556,6 +558,7 @@ var LAUNCHED = true;
 
     'hero.eyebrow': 'Rental properties and finance · Android · iPhone',
     'hero.title': 'Your rental properties and your finances, in one app',
+    'hero.slogan': 'Your money flows, you’re in control',
     'hero.sub': 'SmartFlow is an app to manage your rental properties and your finances in one place: real return on every property, a mortgage with a real amortisation schedule, a tax report and everyday spending. No bank connection needed.',
     'hero.cta': 'Get it on Google Play',
     'hero.ctaIos': 'Download on the App Store',
