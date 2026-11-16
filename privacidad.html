@@ -62,26 +62,26 @@
 
   <span class="badge">SmartFlow</span>
   <h1>Política de Privacidad</h1>
-  <p class="updated">Última actualización: 1 de noviembre de 2026</p>
+  <p class="updated">Última actualización: 16 de noviembre de 2026</p>
 
   <p>
     Esta Política de Privacidad describe cómo <strong>SmartFlow</strong> ("la aplicación",
     "nosotros") trata los datos cuando usas la aplicación, tanto en Android como en iPhone.
-    SmartFlow está desarrollada de forma independiente y su principio de diseño es que tus datos financieros permanezcan en tu
-    dispositivo siempre que sea posible.
+    SmartFlow está desarrollada de forma independiente y su principio de diseño es que tus datos
+    financieros permanezcan en tu dispositivo siempre que sea posible.
   </p>
 
   <h2>1. Resumen — lo esencial</h2>
   <p>
-    Tus movimientos, presupuesto, patrimonio, ahorro e inversiones se guardan únicamente en tu
-    teléfono, en una base de datos cifrada. SmartFlow no se conecta a tu banco y no tiene ningún
-    servidor donde se almacenen tus finanzas.
+    Tus movimientos, presupuesto, patrimonio, ahorro, inversiones y los documentos de tus inmuebles
+    se guardan únicamente en tu teléfono, en una base de datos cifrada. SmartFlow no se conecta a tu
+    banco y no tiene ningún servidor donde se almacenen tus finanzas ni tus documentos.
   </p>
   <div class="card">
     <div class="card-title">Solo hay tres casos en los que algo sale de tu dispositivo</div>
     <ul style="margin:0;">
-      <li>Las funciones de inteligencia artificial, que envían datos financieros a nuestro
-      servidor y de ahí a un proveedor de IA (sección 4).</li>
+      <li>Las funciones de inteligencia artificial, incluida la lectura de documentos con Flux, que
+      envían datos a nuestro servidor y de ahí a un proveedor de IA (sección 4).</li>
       <li>La consulta de cotizaciones de fondos, acciones y criptomonedas (sección 6).</li>
       <li>Los datos de uso y los informes de fallos (sección 8).</li>
     </ul>
@@ -91,7 +91,8 @@
   <h2>2. Datos que se quedan siempre en tu dispositivo</h2>
   <p>
     La siguiente información se almacena en local y nunca se envía a ningún servidor salvo que
-    tú mismo elijas exportarla o compartirla:
+    tú mismo elijas exportarla o compartirla, o usar con ella una función de inteligencia artificial
+    (sección 4):
   </p>
   <ul>
     <li>Movimientos (ingresos, gastos, ahorro), categorías y subcategorías</li>
@@ -100,15 +101,37 @@
     <li>Inversiones: inmuebles, fondos y acciones, hipotecas y su amortización</li>
     <li>Datos fiscales de tus inmuebles: referencia catastral, valores de adquisición y suelo, y
     los contratos de alquiler con el nombre y el NIF de cada inquilino</li>
+    <li>Los documentos de tus inmuebles que guardas en la aplicación (escrituras, contratos,
+    recibos, pólizas, certificados, facturas…), el texto que el teléfono extrae de ellos y las
+    fichas que prepara Flux cuando se lo pides</li>
+    <li>Los avisos de fin de contrato, actualización de la renta, revisión de la hipoteca y
+    vencimientos de documentos, que se calculan y se programan en el propio teléfono</li>
     <li>Preferencias de la aplicación (idioma, moneda, paleta de colores...)</li>
   </ul>
 
   <div class="card">
+    <div class="card-title">Lectura de extractos, capturas y documentos dentro del teléfono</div>
+    <p style="margin:0 0 8px;">
+      Cuando importas el extracto de tu banco (Excel o CSV), unas capturas de pantalla de la
+      aplicación de tu banco, o guardas un documento en PDF o en foto, la lectura se hace
+      <strong>dentro de tu teléfono</strong>. Para sacar el texto de las imágenes y de los PDF se usa
+      el reconocimiento de texto de Google (ML Kit), que funciona en el propio dispositivo.
+      Las imágenes, los PDF y su texto no se envían a ningún servidor por el hecho de leerlos.
+    </p>
+    <p style="margin:0;">
+      ML Kit puede enviar a Google datos técnicos de funcionamiento (modelo de teléfono, versión del
+      sistema y de la librería, tamaño de las imágenes procesadas, errores), sin el contenido de lo
+      que se lee.
+    </p>
+  </div>
+
+  <div class="card">
     <div class="card-title">Cifrado</div>
     <p style="margin:0;">
-      La base de datos está cifrada con una clave aleatoria que se genera en tu propio teléfono y
-      se guarda en el almacén seguro del sistema (Android Keystore en Android, el Llavero en
-      iPhone). Esa clave nunca sale del dispositivo y nosotros no la tenemos.
+      La base de datos, incluidos los documentos que guardas, está cifrada con una clave aleatoria
+      que se genera en tu propio teléfono y se guarda en el almacén seguro del sistema (Android
+      Keystore en Android, el Llavero en iPhone). Esa clave nunca sale del dispositivo y nosotros no
+      la tenemos.
     </p>
   </div>
 
@@ -124,7 +147,8 @@
   <p>
     Puedes exportar una copia completa de tus datos cuando quieras (Ajustes → Crear copia de
     seguridad) y decidir tú dónde guardarla o con quién compartirla. SmartFlow no la sube a ningún
-    sitio de forma automática.
+    sitio de forma automática. Si eliges incluir los documentos, el archivo de la copia los lleva
+    dentro junto con sus fichas: guárdalo en un lugar seguro.
   </p>
 
   <h2>3. El informe fiscal en PDF</h2>
@@ -147,8 +171,8 @@
 
   <h2>4. Funciones de inteligencia artificial</h2>
   <p>
-    Estas funciones son la única parte de SmartFlow que envía datos financieros fuera de tu
-    dispositivo, y solo se activan cuando tú las usas.
+    Estas funciones son la única parte de SmartFlow que envía datos financieros o el contenido de
+    tus documentos fuera de tu dispositivo, y solo se activan cuando tú las usas.
   </p>
   <div class="card">
     <div class="card-title">Te pedimos permiso antes</div>
@@ -156,7 +180,8 @@
       La primera vez que usas una función de inteligencia artificial, SmartFlow te explica qué
       datos se van a enviar y a quién, y te pide permiso. Si no lo das, no se envía nada. Puedes
       retirar o volver a dar ese permiso cuando quieras en <strong>Ajustes → Privacidad →
-      Permitir funciones de IA</strong>.
+      Permitir funciones de IA</strong>. Además, cada vez que pides a Flux que lea un documento, la
+      aplicación te dice qué documento se va a enviar y te pide confirmación.
     </p>
   </div>
 
@@ -171,10 +196,13 @@
   <h3>Qué se envía en cada función</h3>
   <p>
     <strong>Asistente Flux, análisis mensual, resumen anual, previsión mensual, propuesta de
-    objetivos, simulador y categorización de importaciones.</strong> Se envían agregados de tus
-    finanzas (totales por categoría y subcategoría, evolución de los últimos meses, patrimonio
-    neto, saldo por tipo de cuenta, presupuestos, deudas y objetivos) y tus movimientos más
-    recientes.
+    objetivos y simulador.</strong> Se envían agregados de tus finanzas (totales por categoría y
+    subcategoría, evolución de los últimos meses, patrimonio neto, saldo por tipo de cuenta,
+    presupuestos, deudas y objetivos) y tus movimientos más recientes. Si has leído documentos con
+    Flux (ver más abajo), el asistente recibe además sus <strong>fichas</strong>: el resumen y los
+    datos que Flux sacó de cada documento (por ejemplo, el capital, el tipo de interés, las
+    bonificaciones o las comisiones de tu hipoteca), para poder responderte sobre ellos. No recibe
+    el texto completo de los documentos ni el NIF de los inquilinos.
   </p>
 
   <div class="warn">
@@ -189,9 +217,37 @@
   </div>
 
   <p>
-    <strong>Lo que no se envía nunca en estas funciones:</strong> tu nombre, tu correo electrónico,
-    el nombre o alias que le hayas puesto a cada cuenta, los números de cuenta, y el campo de notas
-    de los movimientos.
+    <strong>Categorización de importaciones.</strong> Al importar un extracto o unas capturas,
+    la aplicación categoriza en el teléfono todo lo que reconoce. Solo si se lo pides, Flux te
+    ayuda con lo que queda sin categoría: se le envían el concepto y el importe de esos
+    movimientos. Los <strong>Bizum y las transferencias no se le envían nunca</strong>, porque
+    suelen llevar el nombre de otras personas.
+  </p>
+
+  <p>
+    <strong>Lectura de documentos con Flux</strong> («Leer con Flux» y «Rellenar con mis
+    documentos»). Sirve para que Flux prepare la ficha de un documento de tu inmueble y para
+    rellenar los datos del inmueble, la hipoteca o el inquilino. Funciona así:
+  </p>
+  <ul>
+    <li>El texto se extrae <strong>en tu teléfono</strong>. La imagen o el PDF
+    <strong>no salen nunca</strong> del dispositivo.</li>
+    <li>Antes de enviar nada, la aplicación <strong>tapa en el teléfono</strong> los DNI, NIE, NIF,
+    números de cuenta (IBAN), teléfonos y correos electrónicos que aparezcan, y los sustituye por
+    marcadores como [NIF_1].</li>
+    <li>Se envía el <strong>texto completo del documento</strong> ya tapado. Ese texto puede
+    contener otros datos que aparezcan en él, como los <strong>nombres de las personas</strong>
+    (compradores, vendedores, notario, arrendador o inquilino), direcciones, importes, fechas y
+    cláusulas.</li>
+    <li>La ficha que devuelve Flux se guarda <strong>solo en tu teléfono</strong>. Puedes ver en
+    cualquier momento el texto exacto que se envió, en el documento → «Ver qué se ha enviado a
+    Flux».</li>
+  </ul>
+
+  <p>
+    <strong>Lo que no se envía nunca en estas funciones:</strong> tu nombre o tu correo electrónico
+    de usuario, el nombre o alias que le hayas puesto a cada cuenta, los números de cuenta, el campo
+    de notas de los movimientos, y las imágenes o los PDF de tus documentos.
   </p>
   <p>
     <strong>Informe fiscal.</strong> Se envían las cifras ya calculadas de cada inmueble (ingresos,
@@ -210,8 +266,9 @@
 
   <h3>Quién procesa cada cosa</h3>
   <ul>
-    <li><strong>Anthropic (Claude)</strong> procesa el texto de todas las funciones anteriores y la
-    fotografía del escaneo de tickets.</li>
+    <li><strong>Anthropic (Claude)</strong> procesa el texto de todas las funciones anteriores,
+    incluido el texto tapado de los documentos que pidas leer, y la fotografía del escaneo de
+    tickets.</li>
     <li><strong>Google (Gemini)</strong> procesa únicamente la fotografía del avatar.</li>
   </ul>
   <p>
@@ -223,16 +280,19 @@
   <div class="card">
     <div class="card-title">Nada del contenido</div>
     <p style="margin:0;">
-      Ni tus cifras, ni los títulos de tus movimientos, ni las fotografías. Nuestra función recibe
-      los datos, los reenvía al proveedor, te devuelve la respuesta y no conserva ninguna de las
-      dos cosas. Los registros técnicos guardan únicamente datos de funcionamiento: qué tipo de
-      consulta se hizo, qué modelo se usó, cuánto ocupó la respuesta y si se completó
-      correctamente. Nunca el contenido de la consulta ni de la respuesta.
+      Ni tus cifras, ni los títulos de tus movimientos, ni las fotografías, ni el texto de tus
+      documentos ni sus fichas. Nuestra función recibe los datos, los reenvía al proveedor, te
+      devuelve la respuesta y no conserva ninguna de las dos cosas. Los registros técnicos guardan
+      únicamente datos de funcionamiento: qué tipo de consulta se hizo, qué modelo se usó, cuánto
+      ocupó la consulta y la respuesta, y si se completó correctamente. Nunca el contenido de la
+      consulta ni de la respuesta.
     </p>
   </div>
   <p>
     Sí se guarda, asociado a tu identificador anónimo, si tu suscripción está activa y cuántas
-    consultas has hecho este mes, para poder aplicar los límites de uso.
+    consultas has hecho este mes, para poder aplicar los límites de uso. También guardamos
+    estadísticas mensuales <strong>agregadas</strong> de uso de cada función (número de consultas
+    y su tamaño), sin ningún identificador, para conocer su coste.
   </p>
 
   <h3>Quién puede usar estas funciones</h3>
@@ -245,14 +305,21 @@
   <h2>5. Datos de otras personas que tú introduces</h2>
   <p>
     Si registras contratos de alquiler, estarás guardando el nombre y el NIF de tus inquilinos, que
-    son datos personales de otra persona. Se guardan cifrados en tu teléfono y, desde la versión
-    1.1.0, no salen de él en ningún caso: ni a nuestro servidor ni a ningún proveedor de
-    inteligencia artificial.
+    son datos personales de otra persona. Se guardan cifrados en tu teléfono. El NIF de tus
+    inquilinos no sale nunca del teléfono, y su nombre tampoco sale en las funciones de
+    inteligencia artificial, con una excepción:
   </p>
   <p>
-    Aun así, eres tú quien decide introducirlos y quien comparte el PDF del informe, de modo que la
-    responsabilidad sobre esos datos frente a esas personas es tuya. Te recomendamos introducir
-    solo lo que de verdad necesites para tu declaración.
+    Si pides a Flux que lea un documento en el que aparecen otras personas (por ejemplo, un
+    contrato de alquiler o una escritura), su DNI, NIE, NIF, IBAN, teléfono y correo se tapan en tu
+    teléfono, pero <strong>su nombre y el resto del texto sí se envían</strong> para poder leerlo,
+    tal como se explica en la sección 4, y su nombre puede quedar en la ficha que Flux usa después
+    para responderte.
+  </p>
+  <p>
+    Eres tú quien decide introducir esos datos, guardar esos documentos, pedir que se lean y
+    compartir el PDF del informe, de modo que la responsabilidad sobre esos datos frente a esas
+    personas es tuya. Te recomendamos guardar y leer solo lo que de verdad necesites.
   </p>
 
   <h2>6. Cotizaciones de mercado (fondos, acciones, criptomonedas)</h2>
@@ -272,9 +339,8 @@
   <p>
     La compra y la gestión de la suscripción Premium las procesan RevenueCat y la tienda de tu
     dispositivo (Google Play en Android, App Store en iPhone), que reciben la información necesaria
-    para validar tu suscripción. SmartFlow no ve ni almacena en
-    ningún momento tus datos de pago: ni el número de tarjeta, ni la cuenta bancaria, ni nada
-    parecido. Eso lo gestiona directamente
+    para validar tu suscripción. SmartFlow no ve ni almacena en ningún momento tus datos de pago:
+    ni el número de tarjeta, ni la cuenta bancaria, ni nada parecido. Eso lo gestiona directamente
     la tienda.
   </p>
   <p>
@@ -292,14 +358,14 @@
   <p>
     <strong>Analítica de uso (Firebase Analytics).</strong> Registra qué pantallas se visitan y con
     qué frecuencia, para saber qué partes de la aplicación se usan de verdad. Son datos de
-    navegación: qué pantalla se abre y cuándo. Nunca importes, categorías, títulos de movimientos
-    ni ningún otro dato financiero.
+    navegación: qué pantalla se abre y cuándo. Nunca importes, categorías, títulos de movimientos,
+    documentos ni ningún otro dato financiero.
   </p>
   <p>
     <strong>Informes de fallos (Firebase Crashlytics).</strong> Cuando la aplicación falla, se envía
     un informe técnico con el modelo de teléfono, la versión del sistema operativo, la versión de
     la aplicación y el detalle del error. Sirve para poder arreglarlo. No incluye tus datos
-    financieros.
+    financieros ni tus documentos.
   </p>
   <p>
     <strong>Verificación de la aplicación (Firebase App Check).</strong> Comprueba que las
@@ -317,9 +383,10 @@
 
   <h2>9. Entrada por voz</h2>
   <p>
-    Si registras movimientos por voz, el audio lo procesa el reconocimiento de voz del propio
-    sistema de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe el texto
-    ya transcrito.
+    Si registras movimientos por voz (también desde el widget, los atajos del icono o el botón de
+    los Ajustes rápidos de Android), el audio lo procesa el reconocimiento de voz del propio sistema
+    de tu teléfono. SmartFlow no graba ni almacena archivos de audio: solo recibe el texto ya
+    transcrito.
   </p>
   <ul>
     <li><strong>En Android</strong>, según la configuración de tu teléfono, ese reconocimiento puede
@@ -339,11 +406,12 @@
 
   <h2>11. Cuánto tiempo se conservan los datos</h2>
   <ul>
-    <li>Los datos que están en tu teléfono se conservan mientras tú quieras, y desaparecen al
-    borrarlos desde la aplicación o al desinstalarla.</li>
+    <li>Los datos que están en tu teléfono, incluidos los documentos, su texto y sus fichas, se
+    conservan mientras tú quieras, y desaparecen al borrarlos desde la aplicación o al
+    desinstalarla.</li>
     <li>Lo que guardamos nosotros —el estado de tu suscripción y tus contadores de uso, asociados
     al identificador anónimo— se conserva mientras uses la aplicación, y se elimina si nos lo
-    pides.</li>
+    pides. Las estadísticas agregadas de uso no llevan ningún identificador.</li>
     <li>Los datos de analítica y de fallos se conservan conforme a los plazos de Firebase, que hoy
     son de catorce meses para la analítica.</li>
   </ul>
@@ -355,7 +423,8 @@
     <li>No muestra anuncios</li>
     <li>No te rastrea entre aplicaciones ni sitios web de otras empresas</li>
     <li>No usa tus datos para entrenar modelos de inteligencia artificial</li>
-    <li>No guarda en ningún servidor tus movimientos, tus cifras ni tus fotografías</li>
+    <li>No guarda en ningún servidor tus movimientos, tus cifras, tus fotografías ni tus
+    documentos</li>
   </ul>
 
   <h2>13. Tus derechos</h2>
@@ -363,7 +432,8 @@
     La mayor parte de tus datos nunca sale de tu dispositivo, así que tienes control directo sobre
     ellos: puedes consultarlos, editarlos, exportarlos (Ajustes → Crear copia de seguridad) o
     borrarlos por completo (Ajustes → Borrar todos los datos) en cualquier momento, sin pedirnos
-    permiso.
+    permiso. Cada documento se puede borrar desde su menú, y al borrarlo se borran también su texto
+    y su ficha.
   </p>
   <p>
     Sobre los datos que sí tratamos nosotros —el estado de tu suscripción, tus contadores de uso y
@@ -390,10 +460,11 @@
     <ul style="margin:0;">
       <li><strong>Se elimina:</strong> tu documento de usuario (el estado de tu suscripción) y tus
       contadores de uso mensual, ambos asociados a tu identificador anónimo.</li>
-      <li><strong>Se conserva:</strong> los datos agregados de analítica y los informes de fallos,
-      que no permiten identificarte y se eliminan solos conforme a los plazos de Firebase (catorce
-      meses para la analítica). También los registros contables de compra que Google Play o la App
-      Store están obligados a conservar por ley fiscal, y sobre los que nosotros no tenemos control.</li>
+      <li><strong>Se conserva:</strong> los datos agregados de analítica, las estadísticas
+      agregadas de uso y los informes de fallos, que no permiten identificarte y se eliminan solos
+      conforme a los plazos de Firebase (catorce meses para la analítica). También los registros
+      contables de compra que Google Play o la App Store están obligados a conservar por ley
+      fiscal, y sobre los que nosotros no tenemos control.</li>
       <li><strong>No se ve afectado:</strong> nada de lo que hay en tu teléfono. Eso lo borras tú
       desde Ajustes → Borrar todos los datos, o desinstalando la aplicación.</li>
     </ul>
